@@ -5,11 +5,17 @@ class Clue {
     this.randomCategories = [];
     this.usedCategories = [];
     this.randomClues = [];
+    // this.randomNum = 10;
   }
 
   selectRandomCategories() {
     this.randomCategories = Array(4).fill().map(() => Math.round(Math.random() * 10) + 1);
     this.usedCategories.push(...this.randomCategories);
+  }
+
+  getCategoryName() { 
+    let categoryID = this.randomCategories[0];
+    return Object.keys(data.categories).find(key => data.categories[key] === categoryID);
   }
 
   findCluesForACategory() {

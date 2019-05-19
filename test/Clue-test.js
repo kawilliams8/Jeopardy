@@ -38,4 +38,10 @@ describe('Clue', function() {
     expect(clue.randomClues.length).to.equal(4);
   });
 
+  it('should find name of category', function() {
+    clue.selectRandomCategories();
+    clue.getCategoryName();
+    expect(clue.getCategoryName()).to.be.a('string')
+  });
+
 });
