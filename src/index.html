@@ -1,13 +1,68 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Gametime Starter Kit</title>
+    <title>Jeopardy!</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:600&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Gametime Starter Kit</h1>
-
-    <img src="/images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-
+    <h1><img src="/images/jeopardy-logo.png" alt="Jeopardy! logo"></h1>
+    <main>
+      <table class="gameboard">
+        <tr class="categories">
+          <td id="a1">Category 1</td>
+          <td id="a2">Category 2</td>
+          <td id="a3">Category 3</td>
+          <td id="a4">Category 4</td>
+        </tr>
+        <tr class="clues">
+          <td id="b1">$100</td>
+          <td id="b2">$100</td>
+          <td id="b3">$100</td>
+          <td id="b4">$100</td>
+        </tr>
+        <tr class="clues">
+          <td id="c1">$200</td>
+          <td id="c2">$200</td>
+          <td id="c3">$200</td>
+          <td id="c4">$200</td>
+        </tr>
+        <tr class="clues">
+          <td id="d1">$300</td>
+          <td id="d2">$300</td>
+          <td id="d3">$300</td>
+          <td id="d4">$300</td>
+        </tr>
+        <tr class="clues">
+          <td id="e1">$400</td>
+          <td id="e2">$400</td>
+          <td id="e3">$400</td>
+          <td id="e4">$400</td>
+        </tr>
+      </table>
+    <aside>
+      <section class="players">
+        <article class="player1">
+          <h2>Player 1</h2>
+          <span>$0</span>
+          <input class="player1" type="text">
+        </article>
+        <article class="player2">
+          <h2>Player 2</h2>
+          <span>$0</span>
+          <input class="player2" type="text">
+        </article>
+        <article class="player3">
+          <h2>Player 3</h2>
+          <span>$0</span>
+          <input class="player3" type="text">
+        </article>
+        <article>
+          <button class="submit">Submit</button>
+          <button class="reset">Reset</button>
+        </article>
+      </section>
+    </aside>
+    </main>
     <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
   </body>
 </html>

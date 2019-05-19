@@ -1,6 +1,58 @@
 /* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: pink;
+$primary-background: white;
+$blue: #0033CC;
+$gold: #F3C53D;
+$oswald: 'Oswald', sans-serif;
 
 body {
   background-color: $primary-background;
 }
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+h1 img {
+  margin: 0px 20%;
+}
+
+table {
+  width: 75%;
+  height: 800px;
+}
+
+td {
+  border: 4px solid black;
+  font-family: $oswald;
+  font-size: 67px;
+  color: $gold;
+  text-align: center;
+}
+
+aside {
+  width: 20%;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+span {
+  font-size: 28px;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+}
+
+button {
+  font-size: 21px;
+  padding: 2px;
+  height: 28px;
+  width: 100px;
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
