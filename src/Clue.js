@@ -8,16 +8,25 @@ class Clue {
     // this.randomNum = 10;
   }
 
+  // shuffleCategories() {
+  //   const categories = Object.keys(data.categories).sort(() => 0.5 - Math.random());
+  //   this.newCats.push(categories)
+  // }
+
+
   selectRandomCategories() {
     this.randomCategories = Array(4).fill().map(() => Math.round(Math.random() * 10) + 1);
     this.usedCategories.push(...this.randomCategories);
   }
 
   getCategoryName() { 
-    let categoryID = this.randomCategories[0];
-    return Object.keys(data.categories).find(key => data.categories[key] === categoryID);
+    let result = this.randomCategories.map(category => {
+      return Object.keys(data.categories).find(key => data.categories[key] === category);
+    });
+    return result;
   }
 
+  
   findCluesForACategory() {
     let index = this.randomCategories[0];
     let findClues = data.clues.filter(id => id.categoryId === index);
