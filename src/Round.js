@@ -5,11 +5,17 @@ class Round {
   constructor() {
     this.rounds = ['Jeopardy', 'Double Jeopardy', 'Final Jeopardy'];
     this.clue = new Clue();
-
   }
 
   update() {
-    DOMupdates.changeCategory1();
+    this.clue.selectRandomCategories();
+    this.clue.findCluesForACategory();
+    DOMupdates.changeCategory1(this.clue.getCategoryName()[0]);
+    DOMupdates.changeCategory2(this.clue.getCategoryName()[1]);
+    DOMupdates.changeCategory3(this.clue.getCategoryName()[2]);
+    DOMupdates.changeCategory4(this.clue.getCategoryName()[3]);
+    console.log('Category IDs:',this.clue.randomCategories)
+    console.log('Clues:', this.clue.randomClues)
   }
 
   //1st round

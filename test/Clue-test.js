@@ -17,14 +17,13 @@ describe('Clue', function() {
     expect(clue).to.be.an.instanceOf(Clue);
   });
 
-  it('should create a random number array', function() {
-    clue.selectRandomCategories();
+  it('should create a random number array', function() {    clue.selectRandomCategories();
     expect(clue.randomCategories).to.be.an('array');
   });
 
-  it('should have an array with a length of 4', function() {
+  it('should create a random number array', function() {
     clue.selectRandomCategories();
-    expect(clue.randomCategories.length).to.equal(4);
+    expect(clue.randomCategories).to.be.an('array');
   });
 
   it('should keep track of all used categories', function() {
@@ -41,7 +40,7 @@ describe('Clue', function() {
   it('should find name of category', function() {
     clue.selectRandomCategories();
     clue.getCategoryName();
-    expect(clue.getCategoryName()).to.be.a('string')
+    expect(clue.getCategoryName()).to.be.a('array')
   });
 
 });

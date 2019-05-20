@@ -7,4 +7,3 @@ import Clue from './Clue.js';
 
 
 let game = new Game();
-let clue = new Clue();
