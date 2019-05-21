@@ -17,6 +17,11 @@ describe('Clue', function() {
     expect(clue).to.be.an.instanceOf(Clue);
   });
 
+  it('should shuffle categories', function() {
+    clue.selectRandomCategories()
+    expect(clue.randomCategories.length).to.equal(4)
+  })
+
   it('should create a random number array', function() {    clue.selectRandomCategories();
     expect(clue.randomCategories).to.be.an('array');
   });

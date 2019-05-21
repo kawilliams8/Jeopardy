@@ -10,10 +10,10 @@ class Round {
   update() {
     this.clue.selectRandomCategories();
     this.clue.findCluesForACategory();
-    DOMupdates.changeCategory1(this.clue.getCategoryName()[0]);
-    DOMupdates.changeCategory2(this.clue.getCategoryName()[1]);
-    DOMupdates.changeCategory3(this.clue.getCategoryName()[2]);
-    DOMupdates.changeCategory4(this.clue.getCategoryName()[3]);
+    DOMupdates.changeCategory1(this.clue.getCategoryName()[0].replace(/([A-Z])/g, ' $1').trim().toUpperCase());
+    DOMupdates.changeCategory2(this.clue.getCategoryName()[1].replace(/([A-Z])/g, ' $1').trim().toUpperCase());
+    DOMupdates.changeCategory3(this.clue.getCategoryName()[2].replace(/([A-Z])/g, ' $1').trim().toUpperCase());
+    DOMupdates.changeCategory4(this.clue.getCategoryName()[3].replace(/([A-Z])/g, ' $1').trim().toUpperCase());
     console.log('Category IDs:',this.clue.randomCategories)
     console.log('Clues:', this.clue.randomClues)
   }
