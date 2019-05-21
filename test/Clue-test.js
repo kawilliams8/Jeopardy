@@ -22,11 +22,7 @@ describe('Clue', function() {
     expect(clue.randomCategories.length).to.equal(4)
   })
 
-  it('should create a random number array', function() {    clue.selectRandomCategories();
-    expect(clue.randomCategories).to.be.an('array');
-  });
-
-  it('should create a random number array', function() {
+  it('should create an array that contains 4 numbers', function() {    
     clue.selectRandomCategories();
     expect(clue.randomCategories).to.be.an('array');
   });
@@ -42,7 +38,7 @@ describe('Clue', function() {
     expect(clue.randomClues.length).to.be.a('number');
   });
 
-  it('should find name of category', function() {
+  it('should create an array with category names', function() {
     clue.selectRandomCategories();
     clue.getCategoryName();
     expect(clue.getCategoryName()).to.be.a('array')
