@@ -2,6 +2,7 @@ $primary-background: white;
 $blue: #0033CC;
 $gold: #F3C53D;
 $oswald: 'Oswald', sans-serif;
+$white: #ffffff;
 
 body {
   background-color: $primary-background;
@@ -17,7 +18,6 @@ h1 img {
 }
 
 table {
-  width: 75%;
   height: 800px;
 }
 
@@ -25,9 +25,19 @@ td {
   background-color: $blue;
   border: 4px solid black;
   font-family: $oswald;
-  font-size: 67px;
-  color: $gold;
+  padding: 20px;
+  width: 250px;
   text-align: center;
+}
+
+.clues {
+  color: $gold;
+  font-size: 67px;
+}
+
+.categories {
+  color: $white;
+  font-size: 37px;
 }
 
 aside {
