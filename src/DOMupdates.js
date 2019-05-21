@@ -18,7 +18,7 @@ let DOMupdates = {
 
   changeCategory4(category) {
     $('#d1').text(category);
-  }
+  } 
 
 
 }
