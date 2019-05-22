@@ -3,14 +3,18 @@ import Player from './Player.js';
 
 class Game {
   constructor() {
+    this.round;
+    this.player;
+    this.roundCounter = 0;
+  }
+
+  startGame(){
     this.round = new Round();
     this.player = new Player();
-    this.roundCounter = 0;
+    console.log('hello')
     this.round.populateBoardWithCategories();
     this.round.populateBoardWithClues();
   }
-
-  
 }
 
 export default Game;

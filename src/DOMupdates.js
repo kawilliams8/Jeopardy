@@ -1,9 +1,12 @@
 import $ from 'jquery';
 import Clue from './Clue.js';
-// let clue = new Clue();
 const clue = new Clue();
 
 let DOMupdates = {
+
+  startGame(game) {
+    game.startGame();
+  },
 
   changeCategory1(category) {
     $('#a1').text(category);
