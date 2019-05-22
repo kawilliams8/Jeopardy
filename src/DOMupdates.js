@@ -8,6 +8,12 @@ let DOMupdates = {
     game.startGame();
   },
 
+  displayPlayerNames(){
+    $('.player').eq(0).text($('.playerInput').eq(0).val());
+    $('.player').eq(1).text($('.playerInput').eq(1).val());
+    $('.player').eq(2).text($('.playerInput').eq(2).val());
+  },
+
   changeCategory1(category) {
     $('#a1').text(category);
   },

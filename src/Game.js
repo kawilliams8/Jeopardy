@@ -5,13 +5,13 @@ class Game {
   constructor() {
     this.round;
     this.player;
+    this.players = [];
     this.roundCounter = 0;
   }
 
   startGame(){
     this.round = new Round();
     this.player = new Player();
-    console.log('hello')
     this.round.populateBoardWithCategories();
     this.round.populateBoardWithClues();
   }

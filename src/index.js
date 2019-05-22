@@ -11,4 +11,6 @@ let game = new Game();
   $('.submit').on('click', function(e) {
     e.preventDefault();
     DOMupdates.startGame(game);
+    DOMupdates.displayPlayerNames();
+    $('.playerInput').hide('slow');
   })
