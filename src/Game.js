@@ -6,7 +6,8 @@ class Game {
     this.round = new Round();
     this.player = new Player();
     this.roundCounter = 0;
-    this.round.update();
+    this.round.populateBoardWithCategories();
+    this.round.populateBoardWithClues();
   }
 
   

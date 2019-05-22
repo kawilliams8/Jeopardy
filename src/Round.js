@@ -7,13 +7,18 @@ class Round {
     this.clue = new Clue();
   }
 
-  update() {
+  populateBoardWithCategories() {
     this.clue.selectRandomCategories();
     this.clue.findCluesForACategory();
     DOMupdates.changeCategory1(this.clue.getCategoryName()[0].replace(/([A-Z])/g, ' $1').trim().toUpperCase());
     DOMupdates.changeCategory2(this.clue.getCategoryName()[1].replace(/([A-Z])/g, ' $1').trim().toUpperCase());
     DOMupdates.changeCategory3(this.clue.getCategoryName()[2].replace(/([A-Z])/g, ' $1').trim().toUpperCase());
     DOMupdates.changeCategory4(this.clue.getCategoryName()[3].replace(/([A-Z])/g, ' $1').trim().toUpperCase());
+  }
+
+  populateBoardWithClues() {
+    this.clue.selectRandomCategories();
+    this.clue.findCluesForACategory();
     DOMupdates.addCluesToCardsA2(this.clue.findCluesForACategory()[0][0].question);
     DOMupdates.addCluesToCardsB2(this.clue.findCluesForACategory()[1][0].question);
     DOMupdates.addCluesToCardsC2(this.clue.findCluesForACategory()[2][0].question);
