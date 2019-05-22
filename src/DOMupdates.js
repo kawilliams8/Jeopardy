@@ -21,31 +21,101 @@ let DOMupdates = {
     $('#d1').text(category);
   },
 
-  addCluesToCards1(clues) {
+  addCluesToCardsA2(clues) {
     $('#a2').click(function() {
-      $('#a2').text(clues)
+      $('#a2').text(clues).addClass('changeClueColor')
     });
   },
 
-  addCluesToCards2(clues) {
+  addCluesToCardsB2(clues) {
     $('#b2').click(function() {
-      $('#b2').text(clues)
+      $('#b2').text(clues).addClass('changeClueColor')
     })
   },
 
-  addCluesToCards3(clues) {
+  addCluesToCardsC2(clues) {
     $('#c2').click(function() {
-      $('#c2').text(clues)
+      $('#c2').text(clues).addClass('changeClueColor')
     })
   },
 
-  addCluesToCards4(clues) {
+  addCluesToCardsD2(clues) {
     $('#d2').click(function() {
-      $('#d2').text(clues)
+      $('#d2').text(clues).addClass('changeClueColor')
+    })
+  },
+
+  addCluesToCardsA3(clues) {
+    $('#a3').click(function() {
+      $('#a3').text(clues).addClass('changeClueColor')
+    })
+  },
+
+  addCluesToCardsB3(clues) {
+    $('#b3').click(function() {
+      $('#b3').text(clues).addClass('changeClueColor')
+    })
+  },
+
+  addCluesToCardsC3(clues) {
+    $('#c3').click(function() {
+      $('#c3').text(clues).addClass('changeClueColor')
+    })
+  },
+
+  addCluesToCardsD3(clues) {
+    $('#d3').click(function() {
+      $('#d3').text(clues).addClass('changeClueColor')
+    })
+  },
+
+  addCluesToCardsA4(clues) {
+    $('#a4').click(function() {
+      $('#a4').text(clues).addClass('changeClueColor')
+    })
+  },
+
+  addCluesToCardsB4(clues) {
+    $('#b4').click(function() {
+      $('#b4').text(clues).addClass('changeClueColor')
+    })
+  },
+
+  addCluesToCardsC4(clues) {
+    $('#c4').click(function() {
+      $('#c4').text(clues).addClass('changeClueColor')
+    })
+  },
+
+  addCluesToCardsD4(clues) {
+    $('#d4').click(function() {
+      $('#d4').text(clues).addClass('changeClueColor')
+    })
+  },
+
+  addCluesToCardsA5(clues) {
+    $('#a5').click(function() {
+      $('#a5').text(clues).addClass('changeClueColor')
+    })
+  },
+
+  addCluesToCardsB5(clues) {
+    $('#b5').click(function() {
+      $('#b5').text(clues).addClass('changeClueColor')
+    })
+  },
+
+  addCluesToCardsC5(clues) {
+    $('#c5').click(function() {
+      $('#c5').text(clues).addClass('changeClueColor')
+    })
+  },
+
+  addCluesToCardsD5(clues) {
+    $('#d5').click(function() {
+      $('#d5').text(clues).addClass('changeClueColor')
     })
   }
-
-
 }
 
 export default DOMupdates;

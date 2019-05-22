@@ -14,6 +14,7 @@ main {
 }
 
 h1 img {
+  height: 150px;
   margin: 0px 20%;
 }
 
@@ -66,3 +67,8 @@ button {
   border-radius: 3px;
 }
 
+.changeClueColor {
+  color: white;
+  font-size: 28px;
+  text-transform: uppercase;
+}
