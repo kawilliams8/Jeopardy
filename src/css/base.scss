@@ -54,7 +54,7 @@ aside {
   width: 25%;
   
   article {
-    height: 150px;
+    height: 200px;
     margin: 0 0 20px 20px;
   }
 
@@ -70,7 +70,7 @@ aside {
   }
 
   input {
-    width: 100%;
+    width: 98%;
     padding: 5px;
   }
 
@@ -79,9 +79,24 @@ aside {
     font-size: 21px;
     padding: 2px;
     height: 28px;
-    width: 200px;
+    width: 180px;
     border: 2px solid black;
     border-radius: 3px;
+  }
+
+  .gameButtons {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    justify-content: space-between;
+  }
+
+  .submit, .reset {
+    margin-top: 5px;
+  }
+
+  .submitAnswer {
+    width: 100px;
   }
 }
 
