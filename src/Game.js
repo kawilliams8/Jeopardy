@@ -8,6 +8,8 @@ class Game {
     this.roundCounter = 0;
     this.round.update();
   }
+
+  
 }
 
 export default Game;

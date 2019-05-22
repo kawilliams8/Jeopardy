@@ -10,11 +10,12 @@ class Round {
   update() {
     this.clue.selectRandomCategories();
     this.clue.findCluesForACategory();
-    console.log(this.clue.randomClues);
     DOMupdates.changeCategory1(this.clue.getCategoryName()[0].replace(/([A-Z])/g, ' $1').trim().toUpperCase());
     DOMupdates.changeCategory2(this.clue.getCategoryName()[1].replace(/([A-Z])/g, ' $1').trim().toUpperCase());
     DOMupdates.changeCategory3(this.clue.getCategoryName()[2].replace(/([A-Z])/g, ' $1').trim().toUpperCase());
     DOMupdates.changeCategory4(this.clue.getCategoryName()[3].replace(/([A-Z])/g, ' $1').trim().toUpperCase());
+    DOMupdates.addCluesToCards(this.clue.findCluesForACategory())
+    DOMupdates.addCluesToCards(this.clue.findCluesForACategory()[0][0].question);
   }
 
   //1st round

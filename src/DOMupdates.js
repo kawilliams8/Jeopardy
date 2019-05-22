@@ -1,6 +1,7 @@
 import $ from 'jquery';
-// import Clue from './Clue.js';
+import Clue from './Clue.js';
 // let clue = new Clue();
+const clue = new Clue();
 
 let DOMupdates = {
 
@@ -18,7 +19,14 @@ let DOMupdates = {
 
   changeCategory4(category) {
     $('#d1').text(category);
-  } 
+  },
+
+  addCluesToCards(clues) {
+    $('#a2').click(function() {
+      $('#a2').text(clues)
+    })
+    // DOMupdates.findSpecificClue(clues)
+  }
 
 
 }
