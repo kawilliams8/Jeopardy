@@ -21,11 +21,28 @@ let DOMupdates = {
     $('#d1').text(category);
   },
 
-  addCluesToCards(clues) {
+  addCluesToCards1(clues) {
     $('#a2').click(function() {
       $('#a2').text(clues)
+    });
+  },
+
+  addCluesToCards2(clues) {
+    $('#b2').click(function() {
+      $('#b2').text(clues)
     })
-    // DOMupdates.findSpecificClue(clues)
+  },
+
+  addCluesToCards3(clues) {
+    $('#c2').click(function() {
+      $('#c2').text(clues)
+    })
+  },
+
+  addCluesToCards4(clues) {
+    $('#d2').click(function() {
+      $('#d2').text(clues)
+    })
   }
 
 

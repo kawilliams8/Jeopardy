@@ -14,8 +14,10 @@ class Round {
     DOMupdates.changeCategory2(this.clue.getCategoryName()[1].replace(/([A-Z])/g, ' $1').trim().toUpperCase());
     DOMupdates.changeCategory3(this.clue.getCategoryName()[2].replace(/([A-Z])/g, ' $1').trim().toUpperCase());
     DOMupdates.changeCategory4(this.clue.getCategoryName()[3].replace(/([A-Z])/g, ' $1').trim().toUpperCase());
-    DOMupdates.addCluesToCards(this.clue.findCluesForACategory())
-    DOMupdates.addCluesToCards(this.clue.findCluesForACategory()[0][0].question);
+    DOMupdates.addCluesToCards1(this.clue.findCluesForACategory()[0][0].question);
+    DOMupdates.addCluesToCards2(this.clue.findCluesForACategory()[1][0].question);
+    DOMupdates.addCluesToCards3(this.clue.findCluesForACategory()[2][0].question);
+    DOMupdates.addCluesToCards4(this.clue.findCluesForACategory()[3][0].question);
   }
 
   //1st round
