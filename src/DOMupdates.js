@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import Clue from './Clue.js';
-import data from '../src/data';
-const clue = new Clue();
+// import data from '../src/data';
+// const clue = new Clue();
 
 let DOMupdates = {
 
@@ -10,11 +10,11 @@ let DOMupdates = {
       $('.playerInput').eq(0).val(), 
       $('.playerInput').eq(1).val(), 
       $('.playerInput').eq(2).val()
-      );
+    );
 
   },
 
-  displayPlayerNames(){
+  displayPlayerNames() {
     $('.player').eq(0).text($('.playerInput').eq(0).val());
     $('.player').eq(1).text($('.playerInput').eq(1).val());
     $('.player').eq(2).text($('.playerInput').eq(2).val());
@@ -25,7 +25,7 @@ let DOMupdates = {
       `<input class="playerAnswerInput" type="text" placeholder="Enter your answer">
           <button class="submitAnswer">Submit</button>
           <p>You're Up!</p>`
-      )
+    )
     $('.player1').append(newArticle);
   },
 

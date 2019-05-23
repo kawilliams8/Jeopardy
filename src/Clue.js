@@ -1,15 +1,15 @@
 import fetch from 'cross-fetch';
-import data from '../src/data';
+// import data from '../src/data';
 
 var fetchData;
 fetch('https://fe-apps.herokuapp.com/api/v1/gametime/1903/jeopardy/data')
-   .then(function(response){
-       return response.json()
-   })
-   .then(function(parsedData){
-       fetchData = parsedData.data
-   })
-   .catch(err => console.error(err));
+  .then(function(response) {
+    return response.json()
+  })
+  .then(function(parsedData) {
+    fetchData = parsedData.data
+  })
+  .catch(err => console.error(err));
 
 class Clue {
   constructor(data) {
@@ -21,10 +21,11 @@ class Clue {
   }
 
   selectRandomCategories() {
-    while(this.randomCategories.length < 4){
+    while (this.randomCategories.length < 4) {
       let num = Math.floor(Math.random() * 10) + 1;
-      if(this.randomCategories.indexOf(num) === -1)
-      this.randomCategories.push(num)
+      if (this.randomCategories.indexOf(num) === -1) {
+        this.randomCategories.push(num)
+      }
     }
   }
 

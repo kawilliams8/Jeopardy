@@ -3,8 +3,8 @@ import DOMupdates from '../src/DOMupdates';
 const expect = chai.expect;
 import data from '../src/data';
 import Game from '../src/Game.js';
-import Round from '../src/Round.js';
-import Clue from '../src/Clue.js';
+// import Round from '../src/Round.js';
+// import Clue from '../src/Clue.js';
 import spies from 'chai-spies';
 chai.use(spies);
 

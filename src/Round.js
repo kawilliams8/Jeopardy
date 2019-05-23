@@ -38,20 +38,6 @@ class Round {
     DOMupdates.addCluesToCardsC5(this.clue.findCluesForACategory()[2][3]);
     DOMupdates.addCluesToCardsD5(this.clue.findCluesForACategory()[3][3]);
   }
-
-  //1st round
-    //must have 4 categories w/ 4 clues per cat
-    //1 daily double - single player should be able to input wager
-
-  //2nd round
-    //must have 4 categories w/ 4 clues per cat
-    //2 daily doubles - single player should be able to input wager
-    //player with lowest score goes first
-
-  //final round
-    //1 category with 1 clue
-    //each player should be able to input wager
-    //player with lowest score goes first
 }
 
 export default Round;

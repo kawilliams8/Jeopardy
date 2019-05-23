@@ -1,8 +1,8 @@
 import chai from 'chai';
 const expect = chai.expect;
 import Clue from '../src/Clue.js';
-import Round from '../src/Round.js';
-import Game from '../src/Game.js';
+// import Round from '../src/Round.js';
+// import Game from '../src/Game.js';
 import spies from 'chai-spies';
 chai.use(spies);
 import data from '../src/data';

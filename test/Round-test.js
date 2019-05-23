@@ -2,9 +2,9 @@ import chai from 'chai';
 const expect = chai.expect;
 import data from '../src/data';
 import DOMupdates from '../src/DOMupdates.js';
-import Game from '../src/Game.js';
+// import Game from '../src/Game.js';
 import Round from '../src/Round.js';
-import Clue from '../src/Clue.js';
+// import Clue from '../src/Clue.js';
 import spies from 'chai-spies';
 chai.use(spies);
 
@@ -46,12 +46,12 @@ describe('Round', function() {
 
   it('should invoke the method of populating categories', function() {
     round.populateBoardWithCategories();
-   expect(DOMupdates.changeCategory1).to.have.been.called(1);
+    expect(DOMupdates.changeCategory1).to.have.been.called(1);
   });
 
   it('should invoke the method of populating clues', function() {
     round.populateBoardWithClues();
-   expect(DOMupdates.addCluesToCardsA2).to.have.been.called(1);
+    expect(DOMupdates.addCluesToCardsA2).to.have.been.called(1);
   });
 
 });
