@@ -1,19 +1,19 @@
-import data from './data.js';
+import fetch from 'cross-fetch';
 
-// var data;
-
-// fetch('https://fe-apps.herokuapp.com/api/v1/gametime/1903/jeopardy/data')
-//    .then(function(response){
-//        return response.json()
-//    })
-//    .then(function(parsedData){
-//        data = parsedData
-//    })
-//    .catch(err => console.error(err));
+var fetchData;
+fetch('https://fe-apps.herokuapp.com/api/v1/gametime/1903/jeopardy/data')
+   .then(function(response){
+       return response.json()
+   })
+   .then(function(parsedData){
+       fetchData = parsedData.data
+       console.log(fetchData)
+   })
+   .catch(err => console.error(err));
 
 class Clue {
   constructor() {
-    this.data = data;
+    this.data = fetchData;
     this.randomCategories = [];
     this.usedCategories = [];
     this.randomClues = [];
@@ -30,7 +30,7 @@ class Clue {
 
   getCategoryName() { 
     let result = this.randomCategories.map(category => {
-      return Object.keys(data.categories).find(key => data.categories[key] === category);
+      return Object.keys(this.data.categories).find(key => this.data.categories[key] === category);
     });
     return result;
   }
@@ -38,7 +38,7 @@ class Clue {
   
   findCluesForACategory() {
     return this.randomCategories.map(category => {
-      let result = data.clues.reduce((acc, clue) => {
+      let result = this.data.clues.reduce((acc, clue) => {
         if (clue.categoryId === category) {
           acc.push(clue);
         }
