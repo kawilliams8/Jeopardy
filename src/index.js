@@ -16,4 +16,9 @@ $('.submit').on('click', function(e) {
   DOMupdates.startGame(game);
   DOMupdates.displayPlayerNames();
   $('.playerInput').hide('slow');
+  $('.submit').hide('slow');
+});
+
+$('.reset').on('click', function () {
+  DOMupdates.resetGame();
 });

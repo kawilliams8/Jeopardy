@@ -27,6 +27,11 @@ class Game {
     }
     this.currentPlayer = this.players[0];
     DOMupdates.displayCurrentPlayer(this.currentPlayer.name);
+    DOMupdates.disableStartButton();
+  }
+
+  resetGame() {
+    DOMupdates.resetGame();
   }
 }
 

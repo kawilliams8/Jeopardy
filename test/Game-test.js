@@ -10,7 +10,7 @@ chai.use(spies);
 
 chai.spy.on(DOMupdates, 'startGame', () => true);
 
-describe('See if the tests are running', function() {
+describe('Game', function() {
   let game;
   beforeEach(function () {
     game = new Game(data);

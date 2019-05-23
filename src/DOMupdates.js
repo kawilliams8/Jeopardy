@@ -14,6 +14,10 @@ let DOMupdates = {
 
   },
 
+  disableStartButton() {
+    $('.submit').prop('disabled', true);
+  },
+
   displayPlayerNames() {
     $('.player').eq(0).text($('.playerInput').eq(0).val());
     $('.player').eq(1).text($('.playerInput').eq(1).val());
@@ -140,6 +144,10 @@ let DOMupdates = {
     $('#d5').click(function() {
       $('#d5').text(clues.question).addClass('changeClueColor')
     })
+  },
+
+  resetGame() {
+      window.location.reload(true);
   }
 }
 
