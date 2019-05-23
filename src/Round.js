@@ -21,22 +21,22 @@ class Round {
   populateBoardWithClues() {
     this.clue.selectRandomCategories();
     this.clue.findCluesForACategory();
-    DOMupdates.addCluesToCardsA2(this.clue.findCluesForACategory()[0][0].question);
-    DOMupdates.addCluesToCardsB2(this.clue.findCluesForACategory()[1][0].question);
-    DOMupdates.addCluesToCardsC2(this.clue.findCluesForACategory()[2][0].question);
-    DOMupdates.addCluesToCardsD2(this.clue.findCluesForACategory()[3][0].question);
-    DOMupdates.addCluesToCardsA3(this.clue.findCluesForACategory()[0][1].question);
-    DOMupdates.addCluesToCardsB3(this.clue.findCluesForACategory()[1][1].question);
-    DOMupdates.addCluesToCardsC3(this.clue.findCluesForACategory()[2][1].question);
-    DOMupdates.addCluesToCardsD3(this.clue.findCluesForACategory()[3][1].question);
-    DOMupdates.addCluesToCardsA4(this.clue.findCluesForACategory()[0][2].question);
-    DOMupdates.addCluesToCardsB4(this.clue.findCluesForACategory()[1][2].question);
-    DOMupdates.addCluesToCardsC4(this.clue.findCluesForACategory()[2][2].question);
-    DOMupdates.addCluesToCardsD4(this.clue.findCluesForACategory()[3][2].question);
-    DOMupdates.addCluesToCardsA5(this.clue.findCluesForACategory()[0][3].question);
-    DOMupdates.addCluesToCardsB5(this.clue.findCluesForACategory()[1][3].question);
-    DOMupdates.addCluesToCardsC5(this.clue.findCluesForACategory()[2][3].question);
-    DOMupdates.addCluesToCardsD5(this.clue.findCluesForACategory()[3][3].question);
+    DOMupdates.addCluesToCardsA2(this.clue.findCluesForACategory()[0][0]);
+    DOMupdates.addCluesToCardsB2(this.clue.findCluesForACategory()[1][0]);
+    DOMupdates.addCluesToCardsC2(this.clue.findCluesForACategory()[2][0]);
+    DOMupdates.addCluesToCardsD2(this.clue.findCluesForACategory()[3][0]);
+    DOMupdates.addCluesToCardsA3(this.clue.findCluesForACategory()[0][1]);
+    DOMupdates.addCluesToCardsB3(this.clue.findCluesForACategory()[1][1]);
+    DOMupdates.addCluesToCardsC3(this.clue.findCluesForACategory()[2][1]);
+    DOMupdates.addCluesToCardsD3(this.clue.findCluesForACategory()[3][1]);
+    DOMupdates.addCluesToCardsA4(this.clue.findCluesForACategory()[0][2]);
+    DOMupdates.addCluesToCardsB4(this.clue.findCluesForACategory()[1][2]);
+    DOMupdates.addCluesToCardsC4(this.clue.findCluesForACategory()[2][2]);
+    DOMupdates.addCluesToCardsD4(this.clue.findCluesForACategory()[3][2]);
+    DOMupdates.addCluesToCardsA5(this.clue.findCluesForACategory()[0][3]);
+    DOMupdates.addCluesToCardsB5(this.clue.findCluesForACategory()[1][3]);
+    DOMupdates.addCluesToCardsC5(this.clue.findCluesForACategory()[2][3]);
+    DOMupdates.addCluesToCardsD5(this.clue.findCluesForACategory()[3][3]);
   }
 
   //1st round
