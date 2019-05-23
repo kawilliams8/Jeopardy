@@ -1,8 +1,11 @@
 import Round from './Round.js';
 import Player from './Player.js';
+import Clue from './Clue.js';
+
 
 class Game {
-  constructor() {
+  constructor(data) {
+    this.data = data;
     this.round;
     this.player;
     this.players = [];
@@ -10,8 +13,8 @@ class Game {
   }
 
   startGame(){
-    this.round = new Round();
-    this.player = new Player();
+    this.round = new Round(this.data);
+    this.player = new Player(this.data);
     this.round.populateBoardWithCategories();
     this.round.populateBoardWithClues();
   }

@@ -1,10 +1,12 @@
 import Clue from './Clue.js';
 import DOMupdates from './DOMupdates.js';
 
+
 class Round {
-  constructor() {
+  constructor(data) {
+    this.data = data;
     this.rounds = ['Jeopardy', 'Double Jeopardy', 'Final Jeopardy'];
-    this.clue = new Clue();
+    this.clue = new Clue(data);
   }
 
   populateBoardWithCategories() {

@@ -1,4 +1,5 @@
 import DOMupdates from './DOMupdates.js';
+import Clue from './Clue.js';
 
 class Player {
   constructor(name) {

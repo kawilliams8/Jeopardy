@@ -1,4 +1,5 @@
 import fetch from 'cross-fetch';
+import data from '../src/data';
 
 var fetchData;
 fetch('https://fe-apps.herokuapp.com/api/v1/gametime/1903/jeopardy/data')
@@ -7,13 +8,12 @@ fetch('https://fe-apps.herokuapp.com/api/v1/gametime/1903/jeopardy/data')
    })
    .then(function(parsedData){
        fetchData = parsedData.data
-       console.log(fetchData)
    })
    .catch(err => console.error(err));
 
 class Clue {
-  constructor() {
-    this.data = fetchData;
+  constructor(data) {
+    this.data = fetchData || data;
     this.randomCategories = [];
     this.usedCategories = [];
     this.randomClues = [];
@@ -48,8 +48,6 @@ class Clue {
       }, []);
       return result;
     });
-
-    
   }
 
   findCluesByPointValue() {
