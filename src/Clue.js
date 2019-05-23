@@ -47,6 +47,7 @@ class Clue {
           return final.map(mapClue => mapClue['pointValue']).indexOf(clue['pointValue']) === index;
         });
       }, []);
+      console.log('result: ', result)
       return result;
     });
   }

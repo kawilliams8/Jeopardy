@@ -59,90 +59,105 @@ let DOMupdates = {
   addCluesToCardsB2(clues) {
     $('#b2').click(function() {
       $('#b2').text(clues.question).addClass('changeClueColor')
+      console.log(clues)
     })
   },
 
   addCluesToCardsC2(clues) {
     $('#c2').click(function() {
       $('#c2').text(clues.question).addClass('changeClueColor')
+      console.log(clues)
     })
   },
 
   addCluesToCardsD2(clues) {
     $('#d2').click(function() {
       $('#d2').text(clues.question).addClass('changeClueColor')
+      console.log(clues)
     })
   },
 
   addCluesToCardsA3(clues) {
     $('#a3').click(function() {
       $('#a3').text(clues.question).addClass('changeClueColor')
+      console.log(clues)
     })
   },
 
   addCluesToCardsB3(clues) {
     $('#b3').click(function() {
       $('#b3').text(clues.question).addClass('changeClueColor')
+      console.log(clues)
     })
   },
 
   addCluesToCardsC3(clues) {
     $('#c3').click(function() {
       $('#c3').text(clues.question).addClass('changeClueColor')
+      console.log(clues)
     })
   },
 
   addCluesToCardsD3(clues) {
     $('#d3').click(function() {
       $('#d3').text(clues.question).addClass('changeClueColor')
+      console.log(clues)
     })
   },
 
   addCluesToCardsA4(clues) {
     $('#a4').click(function() {
       $('#a4').text(clues.question).addClass('changeClueColor')
+      console.log(clues)
     })
   },
 
   addCluesToCardsB4(clues) {
     $('#b4').click(function() {
       $('#b4').text(clues.question).addClass('changeClueColor')
+      console.log(clues)
     })
   },
 
   addCluesToCardsC4(clues) {
     $('#c4').click(function() {
       $('#c4').text(clues.question).addClass('changeClueColor')
+      console.log(clues)
     })
   },
 
   addCluesToCardsD4(clues) {
     $('#d4').click(function() {
       $('#d4').text(clues.question).addClass('changeClueColor')
+      console.log(clues)
     })
   },
 
   addCluesToCardsA5(clues) {
     $('#a5').click(function() {
       $('#a5').text(clues.question).addClass('changeClueColor')
+      console.log(clues)
     })
   },
 
   addCluesToCardsB5(clues) {
     $('#b5').click(function() {
       $('#b5').text(clues.question).addClass('changeClueColor')
+      console.log(clues)
     })
   },
 
   addCluesToCardsC5(clues) {
     $('#c5').click(function() {
       $('#c5').text(clues.question).addClass('changeClueColor')
+      console.log(clues)
     })
   },
 
   addCluesToCardsD5(clues) {
     $('#d5').click(function() {
       $('#d5').text(clues.question).addClass('changeClueColor')
+      console.log(clues)
     })
   },
 
