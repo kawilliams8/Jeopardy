@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import Clue from './Clue.js';
 // import data from '../src/data';
-// const clue = new Clue();
+const clue = new Clue();
 
 let DOMupdates = {
 
@@ -33,133 +33,46 @@ let DOMupdates = {
     $('.player1').append(newArticle);
   },
 
-  changeCategory1(category) {
-    $('#a1').text(category);
+  changeCategory(category) {
+    $('.category').each((index, curCategory) => {
+      $(curCategory).text(category[index])
+    });
   },
-
-  changeCategory2(category) {
-    $('#b1').text(category);
-  },
-
-  changeCategory3(category) {
-    $('#c1').text(category);
-  },
-
-  changeCategory4(category) {
-    $('#d1').text(category);
-  },
-
-  addCluesToCardsA2(clues) {
-    $('#a2').click(function() {
-      $('#a2').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
+  
+  changeClue(clue) {
+    $('.clue').each((index, curClue) => {
+      $(curClue).text(clue[index].question).addClass('changeClueColor')
     });
   },
 
-  addCluesToCardsB2(clues) {
-    $('#b2').click(function() {
-      $('#b2').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
-    })
-  },
+  // addCluesToCards(game, boardLocation) {
+  //     $('#a2').text(clues.question).addClass('changeClueColor')
+  //     console.log(clues)
+  // },
 
-  addCluesToCardsC2(clues) {
-    $('#c2').click(function() {
-      $('#c2').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
-    })
-  },
+//   addCluesToCards100(td, clueVariableArray) {
+//   for(let i = 0; i<clueVariableArray.length; i++) {
+//     $(td[i]).text(clueVariableArray[i][1].question).addClass('changeClueColor');
+//   }
+// },
 
-  addCluesToCardsD2(clues) {
-    $('#d2').click(function() {
-      $('#d2').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
-    })
-  },
+  // addCluesToCards200(td, clueVariableArray) {
+  //   for (let i = 0; i < clueVariableArray.length; i++) {
+  //     $(td[i]).text(clueVariableArray[i][2].question).addClass('changeClueColor');
+  //   }
+  // },
 
-  addCluesToCardsA3(clues) {
-    $('#a3').click(function() {
-      $('#a3').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
-    })
-  },
+  // addCluesToCards300(td, clueVariableArray) {
+  //   for (let i = 0; i < clueVariableArray.length; i++) {
+  //     $(td[i]).text(clueVariableArray[i][3].question).addClass('changeClueColor');
+  //   }
+  // },
 
-  addCluesToCardsB3(clues) {
-    $('#b3').click(function() {
-      $('#b3').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
-    })
-  },
-
-  addCluesToCardsC3(clues) {
-    $('#c3').click(function() {
-      $('#c3').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
-    })
-  },
-
-  addCluesToCardsD3(clues) {
-    $('#d3').click(function() {
-      $('#d3').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
-    })
-  },
-
-  addCluesToCardsA4(clues) {
-    $('#a4').click(function() {
-      $('#a4').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
-    })
-  },
-
-  addCluesToCardsB4(clues) {
-    $('#b4').click(function() {
-      $('#b4').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
-    })
-  },
-
-  addCluesToCardsC4(clues) {
-    $('#c4').click(function() {
-      $('#c4').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
-    })
-  },
-
-  addCluesToCardsD4(clues) {
-    $('#d4').click(function() {
-      $('#d4').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
-    })
-  },
-
-  addCluesToCardsA5(clues) {
-    $('#a5').click(function() {
-      $('#a5').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
-    })
-  },
-
-  addCluesToCardsB5(clues) {
-    $('#b5').click(function() {
-      $('#b5').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
-    })
-  },
-
-  addCluesToCardsC5(clues) {
-    $('#c5').click(function() {
-      $('#c5').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
-    })
-  },
-
-  addCluesToCardsD5(clues) {
-    $('#d5').click(function() {
-      $('#d5').text(clues.question).addClass('changeClueColor')
-      console.log(clues)
-    })
-  },
+  // addCluesToCards400(td, clueVariableArray) {
+  //   for (let i = 0; i < clueVariableArray.length; i++) {
+  //     $(td[i]).text(clueVariableArray[i][4].question).addClass('changeClueColor');
+  //   }
+  // },
 
   resetGame() {
       window.location.reload(true);

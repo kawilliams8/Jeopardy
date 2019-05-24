@@ -14,31 +14,32 @@ fetch('https://fe-apps.herokuapp.com/api/v1/gametime/1903/jeopardy/data')
 class Clue {
   constructor(data) {
     this.data = fetchData || data;
-    this.randomCategories = [];
+    this.randomCategoryNums = [];
+    this.randomCategoryNames;
     this.usedCategories = [];
     this.randomClues = [];
-    this.categoryClues = this.findCluesForACategory();
+    this.categoryClues;
   }
 
   selectRandomCategories() {
-    while (this.randomCategories.length < 4) {
+    for (var i = 0; i <= 4; i++) {
       let num = Math.floor(Math.random() * 10) + 1;
-      if (this.randomCategories.indexOf(num) === -1) {
-        this.randomCategories.push(num)
+      if (this.randomCategoryNums.indexOf(num) === -1) {
+        this.randomCategoryNums.push(num);
       }
     }
   }
 
   getCategoryName() { 
-    let result = this.randomCategories.map(category => {
+    let result = this.randomCategoryNums.map(category => {
       return Object.keys(this.data.categories).find(key => this.data.categories[key] === category);
     });
-    return result;
+    this.randomCategoryNames = result;
   }
 
   
   findCluesForACategory() {
-    return this.randomCategories.map(category => {
+    return this.randomCategoryNums.map(category => {
       let result = this.data.clues.reduce((acc, clue) => {
         if (clue.categoryId === category) {
           acc.push(clue);
@@ -47,8 +48,7 @@ class Clue {
           return final.map(mapClue => mapClue['pointValue']).indexOf(clue['pointValue']) === index;
         });
       }, []);
-      console.log('result: ', result)
-      return result;
+      this.categoryClues = result;
     });
   }
 

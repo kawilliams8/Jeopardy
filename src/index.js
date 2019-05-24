@@ -22,3 +22,8 @@ $('.submit').on('click', function(e) {
 $('.reset').on('click', function () {
   DOMupdates.resetGame();
 });
+
+$('.clue').on('click', function() {
+  DOMupdates.addCluesToCards();
+});
+
