@@ -18,7 +18,7 @@ class Clue {
     this.randomCategoryNames;
     this.usedCategories = [];
     this.randomClues = [];
-    this.categoryClues;
+    this.categoryClues = [];
   }
 
   selectRandomCategories() {
@@ -32,8 +32,9 @@ class Clue {
 
   getCategoryName() { 
     let result = this.randomCategoryNums.map(category => {
-      return Object.keys(this.data.categories).find(key => this.data.categories[key] === category);
+      return Object.keys(this.data.categories).find(key => this.data.categories[key] === category).replace(/([A-Z])/g, ' $1').trim().toUpperCase();
     });
+    console.log(result)
     this.randomCategoryNames = result;
   }
 
@@ -48,7 +49,7 @@ class Clue {
           return final.map(mapClue => mapClue['pointValue']).indexOf(clue['pointValue']) === index;
         });
       }, []);
-      this.categoryClues = result;
+      this.categoryClues.push(result);
     });
   }
 

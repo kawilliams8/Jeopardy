@@ -39,40 +39,31 @@ let DOMupdates = {
     });
   },
   
-  changeClue(clue) {
-    $('.clue').each((index, curClue) => {
+  changeClue1(clue) {
+    $('.clue1').each((index, curClue) => {
       $(curClue).text(clue[index].question).addClass('changeClueColor')
     });
   },
 
-  // addCluesToCards(game, boardLocation) {
-  //     $('#a2').text(clues.question).addClass('changeClueColor')
-  //     console.log(clues)
-  // },
+  changeClue2(clue) {
+    $('.clue2').each((index, curClue) => {
+      $(curClue).text(clue[index].question).addClass('changeClueColor')
+    });
+  },
 
-//   addCluesToCards100(td, clueVariableArray) {
-//   for(let i = 0; i<clueVariableArray.length; i++) {
-//     $(td[i]).text(clueVariableArray[i][1].question).addClass('changeClueColor');
-//   }
-// },
+  changeClue3(clue) {
+    $('.clue3').each((index, curClue) => {
+      $(curClue).text(clue[index].question).addClass('changeClueColor')
+    });
+  },
 
-  // addCluesToCards200(td, clueVariableArray) {
-  //   for (let i = 0; i < clueVariableArray.length; i++) {
-  //     $(td[i]).text(clueVariableArray[i][2].question).addClass('changeClueColor');
-  //   }
-  // },
+  changeClue4(clue) {
+    $('.clue4').each((index, curClue) => {
+      $(curClue).text(clue[index].question).addClass('changeClueColor')
+    });
+  },
 
-  // addCluesToCards300(td, clueVariableArray) {
-  //   for (let i = 0; i < clueVariableArray.length; i++) {
-  //     $(td[i]).text(clueVariableArray[i][3].question).addClass('changeClueColor');
-  //   }
-  // },
-
-  // addCluesToCards400(td, clueVariableArray) {
-  //   for (let i = 0; i < clueVariableArray.length; i++) {
-  //     $(td[i]).text(clueVariableArray[i][4].question).addClass('changeClueColor');
-  //   }
-  // },
+  
 
   resetGame() {
       window.location.reload(true);
