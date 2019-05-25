@@ -3,7 +3,7 @@ import DOMupdates from '../src/DOMupdates';
 const expect = chai.expect;
 import data from '../src/data';
 import Game from '../src/Game.js';
-// import Round from '../src/Round.js';
+import Player from '../src/Player.js';
 // import Clue from '../src/Clue.js';
 import spies from 'chai-spies';
 chai.use(spies);
@@ -24,8 +24,13 @@ describe('Game', function() {
     expect(game).to.be.an.instanceof(Game);
   });
 
-  // it.only('should invoke the method that starts the Game', function () {
-  //   game.startGame();
-  //   expect(DOMupdates.startGame).to.have.been.called(1);
-  // });
+  it('should save answer from clicked clue', function() {
+    game.saveClueAnswer('beans');
+    expect(game.clueAnswer).to.equal('beans');
+  });
+
+  it('should save clue value', function() {
+    game.saveClueValue(100);
+    expect(game.cluePointValue).to.equal(100);
+  });
 });

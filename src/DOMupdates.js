@@ -11,8 +11,8 @@ let DOMupdates = {
       $('.playerInput').eq(1).val(), 
       $('.playerInput').eq(2).val()
     );
-
   },
+
 
   disableStartButton() {
     $('.submit').prop('disabled', true);
@@ -24,13 +24,13 @@ let DOMupdates = {
     $('.player').eq(2).text($('.playerInput').eq(2).val());
   },
 
-  displayCurrentPlayer() {
+  displayCurrentPlayer(currentPlayer, lastPlayer) {
     let newArticle = $(
       `<p>You're Up! Choose a clue.</p>
-      <input class="playerAnswerInput" type="text" placeholder="Enter your answer">
-      <button class="submitAnswer">Submit</button>`
+      <input class="playerAnswerInput" type="text" placeholder="Enter your answer">`
     )
-    $('.player1').append(newArticle);
+    $(currentPlayer).append(newArticle);
+    $(lastPlayer).empty();
   },
 
   changeCategory(category) {
@@ -63,7 +63,15 @@ let DOMupdates = {
     });
   },
 
-  
+  getPlayerAnswer(game) {
+    game.savePlayerAnswer(
+      $('.playerAnswerInput').val()
+      );
+  },
+
+  updatePlayerScore(score) {
+
+  },
 
   resetGame() {
     window.location.reload(true);

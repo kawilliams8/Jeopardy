@@ -66,3 +66,8 @@ $categoryFour.on('click', function() {
   console.log(game.round.clue.categoryClues[3][clueId].answer)
   console.log($categoryFour.index($(event.target)))
 });
+
+$('.submitAnswer').on('click', function(e) {
+  e.preventDefault();
+  DOMupdates.getPlayerAnswer(game);
+});

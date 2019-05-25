@@ -22,13 +22,7 @@ class Round {
     DOMupdates.changeClue2(this.clue.categoryClues[1])
     DOMupdates.changeClue3(this.clue.categoryClues[2])
     DOMupdates.changeClue4(this.clue.categoryClues[3])
-    console.log(this.clue.categoryClues)
-    // DOMupdates.change200Clue(this.clue.categoryClues)
   }
-  
-
-    
-
 
 }
 

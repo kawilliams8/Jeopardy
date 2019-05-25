@@ -13,7 +13,8 @@ class Game {
     this.roundCounter = 0;
     this.currentPlayer = null;
     this.clueAnswer;
-    this.cluePointVal;
+    this.cluePointValue;
+    this.playerAnswer;
   }
 
   startGame(name1, name2, name3) {
@@ -28,19 +29,44 @@ class Game {
       this.players.push(player1, player2, player3);
     }
     this.currentPlayer = this.players[0];
-    DOMupdates.displayCurrentPlayer(this.currentPlayer.name);
+    DOMupdates.displayCurrentPlayer('.player1Input');
     DOMupdates.disableStartButton();
-    // console.log(this.round)
+  }
+
+  cyclePlayerTurn() {
+    if (this.currentPlayer === this.players[0]) {
+      this.currentPlayer = this.players[1];
+      DOMupdates.displayCurrentPlayer('.player2Input', '.player1Input');
+    } else if (this.currentPlayer === this.players[1]) {
+      this.currentPlayer = this.players[2];
+      DOMupdates.displayCurrentPlayer('.player3Input', '.player2Input');
+    } else if (this.currentPlayer === this.players[2]) {
+      this.currentPlayer = this.players[0];
+      DOMupdates.displayCurrentPlayer('.player1Input', '.player3Input');
+    }
   }
 
   saveClueAnswer(answer) {
     this.clueAnswer = answer.toLowerCase()
-    console.log("game: ", this.clueAnswer)
   }
   
   saveClueValue(value) {
-    this.cluePointVal = value;
-    console.log("game: ", this.cluePointVal)
+    this.cluePointValue = value;
+  }
+
+  savePlayerAnswer(playerInput) {
+    this.playerAnswer = playerInput.toLowerCase();
+    this.checkPlayerAnswer();
+  }
+
+  checkPlayerAnswer() {
+    if (this.playerAnswer === this.clueAnswer) {
+      this.player.addScore(this.cluePointValue);
+    } else {
+      this.player.subtractScore(this.cluePointValue);
+      this.cyclePlayerTurn();
+      console.log('current player: ', this.currentPlayer)
+    }
   }
 
   resetGame() {

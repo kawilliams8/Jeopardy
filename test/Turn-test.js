@@ -16,7 +16,7 @@ describe('See if the tests are running', function() {
     expect(Turn).to.be.a('function');
   });
 
-  it('should be an instance of Game', function() {
+  it('should be an instance of Turn', function() {
     expect(turn).to.be.an.instanceof(Turn);
   });
 
