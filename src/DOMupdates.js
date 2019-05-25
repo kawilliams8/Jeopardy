@@ -1,7 +1,7 @@
 import $ from 'jquery';
-import Clue from './Clue.js';
+// import Clue from './Clue.js';
 // import data from '../src/data';
-const clue = new Clue();
+// const clue = new Clue();
 
 let DOMupdates = {
 
@@ -66,7 +66,7 @@ let DOMupdates = {
   
 
   resetGame() {
-      window.location.reload(true);
+    window.location.reload(true);
   }
 }
 

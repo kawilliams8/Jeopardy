@@ -1,6 +1,6 @@
 import Clue from './Clue.js';
 import DOMupdates from './DOMupdates.js';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 class Round {
   constructor(data) {
@@ -17,7 +17,7 @@ class Round {
   }
 
 
-  populateBoardWithClues(){
+  populateBoardWithClues() {
     DOMupdates.changeClue1(this.clue.categoryClues[0])
     DOMupdates.changeClue2(this.clue.categoryClues[1])
     DOMupdates.changeClue3(this.clue.categoryClues[2])
