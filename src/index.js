@@ -29,46 +29,49 @@ $('.reset').on('click', function () {
 
 $categoryOne.on('click', function() {
   let clueId = $categoryOne.index($(event.target));
-  $(event.target).css('background-color', 'pink')
-  game.saveClueAnswer(game.round.clue.categoryClues[0][clueId].answer)
-  game.saveClueValue(game.round.clue.categoryClues[0][clueId].pointValue)
-  console.log(game.round.clue.categoryClues[0][clueId])
-  console.log(game.round.clue.categoryClues[0][clueId].answer)
-  console.log($categoryOne.index($(event.target)))
+  $(event.target).text(game.round.clue.categoryClues[0][clueId].question).addClass('changeClueColor');
+  game.saveClueAnswer(game.round.clue.categoryClues[0][clueId].answer);
+  game.saveClueValue(game.round.clue.categoryClues[0][clueId].pointValue);
+  game.saveClueIndex('a' + clueId);
+  // console.log(game.round.clue.categoryClues[0][clueId])
+  console.log(game.round.clue.categoryClues[0][clueId].answer);
+  // console.log($categoryOne.index($(event.target)))
 });
 
 $categoryTwo.on('click', function() {
   let clueId = $categoryTwo.index($(event.target));
-  $(event.target).css('background-color', 'pink')
+  $(event.target).text(game.round.clue.categoryClues[1][clueId].question).addClass('changeClueColor')
   game.saveClueAnswer(game.round.clue.categoryClues[1][clueId].answer)
   game.saveClueValue(game.round.clue.categoryClues[1][clueId].pointValue)
-  console.log(game.round.clue.categoryClues[1][clueId])
+  game.saveClueIndex('b' + clueId);
+  // console.log(game.round.clue.categoryClues[1][clueId])
   console.log(game.round.clue.categoryClues[1][clueId].answer)
-  console.log($categoryTwo.index($(event.target)))
+  // console.log($categoryTwo.index($(event.target)))
 });
 
 $categoryThree.on('click', function() {
   let clueId = $categoryThree.index($(event.target));
-  $(event.target).css('background-color', 'pink')
+  $(event.target).text(game.round.clue.categoryClues[2][clueId].question).addClass('changeClueColor')
   game.saveClueAnswer(game.round.clue.categoryClues[2][clueId].answer)
   game.saveClueValue(game.round.clue.categoryClues[2][clueId].pointValue)
-  console.log(game.round.clue.categoryClues[2][clueId])
+  game.saveClueIndex('c' + clueId);
+  // console.log(game.round.clue.categoryClues[2][clueId])
   console.log(game.round.clue.categoryClues[2][clueId].answer)
-  console.log($categoryThree.index($(event.target)))
+  // console.log($categoryThree.index($(event.target)))
 });
 
 $categoryFour.on('click', function() {
   let clueId = $categoryFour.index($(event.target));
-  $(event.target).css('background-color', 'pink')
+  $(event.target).text(game.round.clue.categoryClues[3][clueId].question).addClass('changeClueColor')
   game.saveClueAnswer(game.round.clue.categoryClues[3][clueId].answer)
   game.saveClueValue(game.round.clue.categoryClues[3][clueId].pointValue)
-  console.log(game.round.clue.categoryClues[3][clueId])
+  game.saveClueIndex('d' + clueId);
+  // console.log(game.round.clue.categoryClues[3][clueId])
   console.log(game.round.clue.categoryClues[3][clueId].answer)
-  console.log($categoryFour.index($(event.target)))
+  // console.log($categoryFour.index($(event.target)))
 });
 
 $('.submitAnswer').on('click', function(e) {
   e.preventDefault();
   DOMupdates.getPlayerAnswer(game);
-  console.log(game.currentPlayer)
 });

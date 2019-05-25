@@ -14,6 +14,7 @@ class Game {
     this.currentPlayer = null;
     this.clueAnswer;
     this.cluePointValue;
+    this.clueIndex;
     this.playerAnswer;
   }
 
@@ -41,6 +42,11 @@ class Game {
     this.cluePointValue = value;
   }
 
+  saveClueIndex(index) {
+    this.clueIndex = index;
+    console.log('clueInd:', this.clueIndex);
+  }
+
   savePlayerAnswer(playerInput) {
     this.playerAnswer = playerInput.toLowerCase();
     this.checkPlayerAnswer();
@@ -48,10 +54,9 @@ class Game {
 
   checkPlayerAnswer() {
     let index = this.players.indexOf(this.currentPlayer);
-
-    console.log('index:', index)
     if (this.playerAnswer === this.clueAnswer) {
       this.currentPlayer.addScore(index, this.cluePointValue);
+      DOMupdates.emptyClue(this.clueIndex);
     } else {
       this.currentPlayer.subtractScore(index, this.cluePointValue);
       this.cyclePlayerTurn();

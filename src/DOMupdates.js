@@ -41,25 +41,25 @@ let DOMupdates = {
   
   changeClue1(clue) {
     $('.clue1').each((index, curClue) => {
-      $(curClue).text(clue[index].question).addClass('changeClueColor')
+      $(curClue).text(`$${clue[index].pointValue}`)
     });
   },
 
   changeClue2(clue) {
     $('.clue2').each((index, curClue) => {
-      $(curClue).text(clue[index].question).addClass('changeClueColor')
+      $(curClue).text(`$${clue[index].pointValue}`)
     });
   },
 
   changeClue3(clue) {
     $('.clue3').each((index, curClue) => {
-      $(curClue).text(clue[index].question).addClass('changeClueColor')
+      $(curClue).text(`$${clue[index].pointValue}`)
     });
   },
 
   changeClue4(clue) {
     $('.clue4').each((index, curClue) => {
-      $(curClue).text(clue[index].question).addClass('changeClueColor')
+      $(curClue).text(`$${clue[index].pointValue}`)
     });
   },
 
@@ -71,6 +71,10 @@ let DOMupdates = {
 
   updatePlayerScore(index, score) {
     $('.playerScore').eq(index).text(`$${score}`);
+  },
+
+  emptyClue(clueLocation) {
+    $(`#${clueLocation}`).text('');
   },
 
   resetGame() {
