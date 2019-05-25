@@ -13,6 +13,7 @@ class Game {
     this.roundCounter = 0;
     this.currentPlayer = null;
     this.clueAnswer;
+    this.cluePointVal;
   }
 
   startGame(name1, name2, name3) {
@@ -32,8 +33,14 @@ class Game {
     // console.log(this.round)
   }
 
-  saveClueAnswer(clueAnswer) {
-    this.clueAnswer= clueAnswer.toLowerCase()
+  saveClueAnswer(answer) {
+    this.clueAnswer = answer.toLowerCase()
+    console.log("game: ", this.clueAnswer)
+  }
+  
+  saveClueValue(value) {
+    this.cluePointVal = value;
+    console.log("game: ", this.cluePointVal)
   }
 
   resetGame() {
