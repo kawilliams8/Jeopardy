@@ -26,9 +26,9 @@ let DOMupdates = {
 
   displayCurrentPlayer() {
     let newArticle = $(
-      `<input class="playerAnswerInput" type="text" placeholder="Enter your answer">
-          <button class="submitAnswer">Submit</button>
-          <p>You're Up!</p>`
+      `<p>You're Up! Choose a clue.</p>
+      <input class="playerAnswerInput" type="text" placeholder="Enter your answer">
+      <button class="submitAnswer">Submit</button>`
     )
     $('.player1').append(newArticle);
   },

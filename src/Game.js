@@ -12,6 +12,7 @@ class Game {
     this.players = [];
     this.roundCounter = 0;
     this.currentPlayer = null;
+    this.clueAnswer;
   }
 
   startGame(name1, name2, name3) {
@@ -28,6 +29,11 @@ class Game {
     this.currentPlayer = this.players[0];
     DOMupdates.displayCurrentPlayer(this.currentPlayer.name);
     DOMupdates.disableStartButton();
+    // console.log(this.round)
+  }
+
+  saveClueAnswer(clueAnswer) {
+    this.clueAnswer= clueAnswer.toLowerCase()
   }
 
   resetGame() {
