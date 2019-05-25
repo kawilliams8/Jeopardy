@@ -77,6 +77,10 @@ let DOMupdates = {
     $(`#${clueLocation}`).text('');
   },
 
+  emptyPlayerAnswer() {
+    $('.playerAnswerInput').val('');
+  },
+
   resetGame() {
     window.location.reload(true);
   }
