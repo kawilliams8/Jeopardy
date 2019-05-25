@@ -69,8 +69,8 @@ let DOMupdates = {
       );
   },
 
-  updatePlayerScore(score) {
-
+  updatePlayerScore(index, score) {
+    $('.playerScore').eq(index).text(`$${score}`);
   },
 
   resetGame() {

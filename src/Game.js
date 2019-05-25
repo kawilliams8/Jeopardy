@@ -33,19 +33,6 @@ class Game {
     DOMupdates.disableStartButton();
   }
 
-  cyclePlayerTurn() {
-    if (this.currentPlayer === this.players[0]) {
-      this.currentPlayer = this.players[1];
-      DOMupdates.displayCurrentPlayer('.player2Input', '.player1Input');
-    } else if (this.currentPlayer === this.players[1]) {
-      this.currentPlayer = this.players[2];
-      DOMupdates.displayCurrentPlayer('.player3Input', '.player2Input');
-    } else if (this.currentPlayer === this.players[2]) {
-      this.currentPlayer = this.players[0];
-      DOMupdates.displayCurrentPlayer('.player1Input', '.player3Input');
-    }
-  }
-
   saveClueAnswer(answer) {
     this.clueAnswer = answer.toLowerCase()
   }
@@ -60,12 +47,27 @@ class Game {
   }
 
   checkPlayerAnswer() {
+    let index = this.players.indexOf(this.currentPlayer);
+
+    console.log('index:', index)
     if (this.playerAnswer === this.clueAnswer) {
-      this.player.addScore(this.cluePointValue);
+      this.currentPlayer.addScore(index, this.cluePointValue);
     } else {
-      this.player.subtractScore(this.cluePointValue);
+      this.currentPlayer.subtractScore(index, this.cluePointValue);
       this.cyclePlayerTurn();
-      console.log('current player: ', this.currentPlayer)
+    }
+  }
+
+  cyclePlayerTurn() {
+    if (this.currentPlayer === this.players[0]) {
+      this.currentPlayer = this.players[1];
+      DOMupdates.displayCurrentPlayer('.player2Input', '.player1Input');
+    } else if (this.currentPlayer === this.players[1]) {
+      this.currentPlayer = this.players[2];
+      DOMupdates.displayCurrentPlayer('.player3Input', '.player2Input');
+    } else if (this.currentPlayer === this.players[2]) {
+      this.currentPlayer = this.players[0];
+      DOMupdates.displayCurrentPlayer('.player1Input', '.player3Input');
     }
   }
 

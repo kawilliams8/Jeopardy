@@ -70,4 +70,5 @@ $categoryFour.on('click', function() {
 $('.submitAnswer').on('click', function(e) {
   e.preventDefault();
   DOMupdates.getPlayerAnswer(game);
+  console.log(game.currentPlayer)
 });

@@ -7,14 +7,14 @@ class Player {
     this.score = 0;
   }
 
-  addScore(pointValue) {
+  addScore(index, pointValue) {
     this.score += pointValue;
-    DOMupdates.updatePlayerScore(this.score);
+    DOMupdates.updatePlayerScore(index, this.score);
   }
 
-  subtractScore(pointValue) {
+  subtractScore(index, pointValue) {
     this.score -= pointValue;
-    DOMupdates.updatePlayerScore(this.score);
+    DOMupdates.updatePlayerScore(index, this.score);
   }
 
 
