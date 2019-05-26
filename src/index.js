@@ -4,6 +4,8 @@ import './images/turing-logo.png';
 import './images/jeopardy-logo.png';
 import data from './data'
 import Game from './Game.js';
+import Round from './Round.js';
+import Player from './Player.js';
 // import Clue from './Clue.js';
 import DOMupdates from './DOMupdates';
 
@@ -33,6 +35,7 @@ $categoryOne.on('click', function() {
   game.saveClueAnswer(game.round.clue.categoryClues[0][clueId].answer);
   game.saveClueValue(game.round.clue.categoryClues[0][clueId].pointValue);
   game.saveClueIndex('a' + clueId);
+  game.round.checkDailyDouble(game);
   // console.log(game.round.clue.categoryClues[0][clueId])
   console.log(game.round.clue.categoryClues[0][clueId].answer);
   // console.log($categoryOne.index($(event.target)))
@@ -75,4 +78,10 @@ $('.submitAnswer').on('click', function(e) {
   e.preventDefault();
   DOMupdates.getPlayerAnswer(game);
   DOMupdates.emptyPlayerAnswer();
+});
+
+$('.submitWager').on('click', function (e) {
+  e.preventDefault();
+  console.log(game.currentPlayer)
+  DOMupdates.getPlayerWager(game.currentPlayer);
 });

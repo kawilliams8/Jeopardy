@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import Player from './Player';
 // import Clue from './Clue.js';
 // import data from '../src/data';
 // const clue = new Clue();
@@ -31,6 +32,22 @@ let DOMupdates = {
     )
     $(currentPlayer).append(newArticle);
     $(lastPlayer).empty();
+  },
+
+  // displayDailyDoubleWager(currentPlayer) {
+  //   let newArticle = $(
+  //     `<p>Daily Double</p>
+  //     <p>Enter wager between $5 and your current score.</p>
+  //     <input class="playerWagerInput" type="number" placeholder="Enter your wager">
+  //     <button class="submitWager">Submit Wager</button>`
+  //   )
+  //   $('#dd').append(newArticle);
+  // },
+
+  getPlayerWager(currentPlayer) {
+    currentPlayer.acceptWager(
+      $('.playerWagerInput').val()
+    );
   },
 
   changeCategory(category) {

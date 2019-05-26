@@ -52,21 +52,6 @@ class Clue {
       this.categoryClues.push(result);
     });
   }
-
-  findCluesByPointValue() {
-    
-
-  }
-  
-
-  populateBoard() {
-    //create method to randomize categoryID - 4 #s correlate to in the clues and pointValue
-  // then we need one random clue with each pointValue per category 
-  //populateBoard
-
-  }
-
-
 }
 
 export default Clue;

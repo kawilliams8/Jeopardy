@@ -10,6 +10,7 @@ class Game {
     this.round;
     this.player;
     this.players = [];
+    this.questionCounter = 0;
     this.roundCounter = 0;
     this.currentPlayer = null;
     this.clueAnswer;
@@ -23,6 +24,7 @@ class Game {
     this.player = new Player(this.data);
     this.round.populateBoardWithCategories();
     this.round.populateBoardWithClues();
+    this.round.selectRandomDailyDouble();
     if (this.players.length === 0) {
       let player1 = new Player(name1);
       let player2 = new Player(name2);
@@ -57,6 +59,8 @@ class Game {
     if (this.playerAnswer === this.clueAnswer) {
       this.currentPlayer.addScore(index, this.cluePointValue);
       DOMupdates.emptyClue(this.clueIndex);
+      this.questionCounter++;
+      console.log('questionCounter: ', this.questionCounter);
     } else {
       this.currentPlayer.subtractScore(index, this.cluePointValue);
       this.cyclePlayerTurn();
@@ -79,6 +83,7 @@ class Game {
   resetGame() {
     DOMupdates.resetGame();
   }
+
 }
 
 export default Game;
