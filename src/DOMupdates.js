@@ -27,11 +27,12 @@ let DOMupdates = {
 
   displayCurrentPlayer(currentPlayer, lastPlayer) {
     let newArticle = $(
-      `<p>You're Up! Choose a clue.</p>
-      <input class="playerAnswerInput" type="text" placeholder="Enter your answer">`
+      `<input class="playerAnswerInput" type="text" placeholder="Enter your answer">`
     )
     $(currentPlayer).append(newArticle);
-    $(lastPlayer).empty();
+    $(`${currentPlayer}`).css('border', 'solid #F3C53D 5px');
+    $(`${currentPlayer}`).css('border-radius', '5px');
+    $(lastPlayer).empty().css('border', '');
   },
 
   // displayDailyDoubleWager(currentPlayer) {

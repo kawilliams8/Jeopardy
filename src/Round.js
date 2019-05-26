@@ -7,7 +7,7 @@ class Round {
   constructor(data) {
     this.data = data;
     this.rounds = ['Jeopardy', 'Double Jeopardy', 'Final Jeopardy'];
-    this.dailyDouble = 'a0';
+    this.dailyDouble = '';
     this.clue = new Clue(data);
   }
 
@@ -42,9 +42,12 @@ class Round {
   }
 
   checkDailyDouble(game) {
+    console.log('dd:', this.dailyDouble)
     if (game.clueIndex === this.dailyDouble) {
+      alert('DAILY DOUBLE! Please enter a wager')
       // DOMupdates.displayDailyDoubleWager();
     }
+
   }
 
 }

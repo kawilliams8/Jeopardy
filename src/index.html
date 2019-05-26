@@ -5,7 +5,12 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald:600&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1><img src="/images/jeopardy-logo.png" alt="Jeopardy! logo"></h1>
+    <header>
+      <h1><img src="/images/jeopardy-logo.png" alt="Jeopardy! logo"></h1>
+      <article class="gameButtons">
+          <button class="reset">Reset Game</button>
+        </article>
+    </header>
     <main>
       <table class="gameboard">
         <tr class="categories">
@@ -42,34 +47,37 @@
     <aside>
       <section class="players">
         <article class="player1">
-          <h2 class="player">Player 1</h2>
-          <span class="playerScore" id="player1Score">$0</span>
+          <span class="flexPlayers">
+            <h2 class="player">Player 1</h2>
+            <span class="playerScore" id="player1Score">$0</span>
+          </span>
           <input class="playerInput" type="text" placeholder="Enter your name">
           <div class="player1Input" id="test"></div>
         </article>
         <article class="player2">
-          <h2 class="player">Player 2</h2>
-          <span class="playerScore" id="player2Score">$0</span>
+          <span class="flexPlayers">
+            <h2 class="player">Player 2</h2>
+            <span class="playerScore" id="player2Score">$0</span>
+          </span>
           <input class="playerInput" type="text" placeholder="Enter your name">
           <div class="player2Input"></div>
         </article>
         <article class="player3">
-          <h2 class="player">Player 3</h2>
-          <span class="playerScore" id="player3Score">$0</span>
+          <span class="flexPlayers">
+            <h2 class="player">Player 3</h2>
+            <span class="playerScore" id="player3Score">$0</span>
+          </span>
           <input class="playerInput" type="text" placeholder="Enter your name">
           <div class="player3Input"></div>
         </article>
         <article class="dailyDoubleWager" id="dd">
-          <p>Daily Double</p>
-          <p>Enter a wager between $5 and your current score.</p>
-          <input class="playerWagerInput" type="number" placeholder="Enter your wager">
-          <button class="submitWager">Submit Wager</button>
-        </article>
-        <article class="gameButtons">
           <button class="submit">Start Game</button>
           <button class="submitAnswer">Submit Answer</button>
-          <button class="reset">Reset Game</button>
-        </article>
+          <p class="dailyDoubleTitle">Daily Double</p>
+          <p>Wager between $5 and your current score.</p>
+          <div class="flexWager"><input class="playerWagerInput" type="number" placeholder="Enter your wager">
+          <button class="submitWager">Submit</button>
+        </article></div>
       </section>
     </aside>
     </main>

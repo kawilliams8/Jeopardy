@@ -13,8 +13,28 @@ main {
   flex-direction: row;
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.gameButtons {
+
+  .reset {
+    background: $blue;
+    color: white;
+    font-family: $oswald;
+    font-size: 28px;
+    height: 50px;
+    border-radius: 5px;
+    margin: 20px;
+    width: 150px;
+  }
+}
+
 h1 img {
-  height: 150px;
+  height: 85px;
   margin: 0px 20%;
 }
 
@@ -51,11 +71,17 @@ table {
 
 //Player display and inputs
 aside {
-  width: 25%;
+  width: 18%;
   
   article {
-    height: 200px;
+    height: 120px;
     margin: 0 0 20px 20px;
+  }
+
+  .flexPlayers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   h2 {
@@ -70,34 +96,55 @@ aside {
   }
 
   input {
-    width: 98%;
-    padding: 5px;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 92%;
+    padding: 10px;
   }
 
-  button {
-    margin-top: 20px;
-    font-size: 21px;
-    padding: 2px;
-    height: 28px;
-    width: 180px;
-    border: 2px solid black;
-    border-radius: 3px;
+  .dailyDoubleTitle, p {
+    color: black;
+    font-size: 36px;
+    font-family: $oswald;
+    margin: 0;
   }
 
-  .gameButtons {
+  p {
+    color: $blue;
+    font-size: 16px;
+  }
+
+  .submit, .submitAnswer, .submitWager {
+    background: $gold;
+    color: black;
+    font-family: $oswald;
+    font-size: 28px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .flexWager {
     display: flex;
     flex-direction: row;
-    height: 50px;
-    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+
+    .playerWagerInput {
+      height: 22px;
+      margin-right: 8px;
+      width: 60%;
+    }
+
+    .submitWager {
+      background: $blue;
+      color: white;
+      width: 35%;
+    }
   }
 
-  .submit, .reset {
-    margin-top: 5px;
-  }
+  
 
-  .submitAnswer {
-    width: 100px;
-  }
 }
 
 

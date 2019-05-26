@@ -58,11 +58,16 @@ class Game {
     let index = this.players.indexOf(this.currentPlayer);
     if (this.playerAnswer === this.clueAnswer) {
       this.currentPlayer.addScore(index, this.cluePointValue);
+      alert('You are correct! Please choose another clue!')
       DOMupdates.emptyClue(this.clueIndex);
       this.questionCounter++;
       console.log('questionCounter: ', this.questionCounter);
+    } else if (this.playerAnswer !== this.clueAnswer && this.clueIndex === this.round.dailyDouble) {
+      console.log('check daily double')
+      this.cyclePlayerTurn();
     } else {
       this.currentPlayer.subtractScore(index, this.cluePointValue);
+      alert('You are wrong! Next player now answers the same question!')
       this.cyclePlayerTurn();
     }
   }
