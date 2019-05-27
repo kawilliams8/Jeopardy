@@ -1,5 +1,6 @@
 import DOMupdates from './DOMupdates.js';
-import Game from './Game.js';
+// import Game from './Game.js';
+// import Round from './Round.js';
 
 class Player {
   constructor(name) {
@@ -15,6 +16,16 @@ class Player {
 
   subtractScore(index, pointValue) {
     this.score -= pointValue;
+    DOMupdates.updatePlayerScore(index, this.score);
+  }
+
+  addDoubleScore(index, pointValue) {
+    this.score += pointValue * 2;
+    DOMupdates.updatePlayerScore(index, this.score);
+  }
+
+  subtractDoubleScore(index, pointValue) {
+    this.score -= pointValue * 2;
     DOMupdates.updatePlayerScore(index, this.score);
   }
 

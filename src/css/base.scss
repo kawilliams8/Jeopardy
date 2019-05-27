@@ -18,6 +18,12 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  .currentRound {
+    color: black;
+    font-family: $oswald;
+    font-size: 36px;
+  }
 }
 
 .gameButtons {
@@ -85,10 +91,14 @@ aside {
     justify-content: space-between;
   }
 
-  h2 {
+  h2, .playerScore {
     font-size: 36px;
     font-family: $oswald;
     margin: 0;
+  }
+
+  .playerScore {
+    color: $blue;
   }
 
   span {

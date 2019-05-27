@@ -1,12 +1,12 @@
 import Clue from './Clue.js';
-import Game from './Game.js';
+// import Game from './Game.js';
 import DOMupdates from './DOMupdates.js';
 // import $ from 'jquery';
 
 class Round {
   constructor(data) {
     this.data = data;
-    this.rounds = ['Jeopardy', 'Double Jeopardy', 'Final Jeopardy'];
+    this.rounds = ['Round 1: Jeopardy', 'Round 2: Double Jeopardy', 'Round 3: Final Jeopardy'];
     this.dailyDouble = '';
     this.clue = new Clue(data);
   }
@@ -27,16 +27,16 @@ class Round {
 
   selectRandomDailyDouble() {
     let dailyDouble = [];
-    var characters = 'abcd';
-    var charactersLength = characters.length;
-      for (var i = 0; i < 1; i++) {
-        dailyDouble.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
-      }
-    var characters = '0123';
-    var charactersLength = characters.length;
-      for (var i = 0; i < 1; i++) {
-        dailyDouble.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
-      }
+    let letters = 'abcd';
+    let lettersLength = letters.length;
+    for (var a = 0; a < 1; a++) {
+      dailyDouble.push(letters.charAt(Math.floor(Math.random() * lettersLength)));
+    }
+    let numbers = '0123';
+    let numbersLength = numbers.length;
+    for (var i = 0; i < 1; i++) {
+      dailyDouble.push(numbers.charAt(Math.floor(Math.random() * numbersLength)));
+    }
     this.dailyDouble = dailyDouble.join('');
     console.log('random DD: ', this.dailyDouble);
   }
@@ -45,11 +45,8 @@ class Round {
     console.log('dd:', this.dailyDouble)
     if (game.clueIndex === this.dailyDouble) {
       alert('DAILY DOUBLE! Please enter a wager')
-      // DOMupdates.displayDailyDoubleWager();
     }
-
   }
-
 }
 
 export default Round;
