@@ -46,6 +46,7 @@ let DOMupdates = {
   },
 
   showDailyDouble() {
+    $('.playerWagerInput').val('');
     $('.wager').show();
   },
 
@@ -110,6 +111,10 @@ let DOMupdates = {
     $('.400').text('$400')
     $('.600').text('$600')
     $('.800').text('$800')
+  },
+
+  showInstructions(message) {
+    $('.instructions').text(message);
   },
 
   resetGame() {
