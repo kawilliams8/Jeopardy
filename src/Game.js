@@ -1,5 +1,6 @@
 import Round from './Round.js';
 import Player from './Player.js';
+import RoundTwo from './RoundTwo.js';
 // import Clue from './Clue.js';
 import DOMupdates from './DOMupdates';
 
@@ -47,7 +48,6 @@ class Game {
 
   saveClueIndex(index) {
     this.clueIndex = index;
-    console.log('clueInd:', this.clueIndex);
   }
 
   savePlayerAnswer(playerInput) {
@@ -62,14 +62,24 @@ class Game {
       alert('You are correct! Please choose another clue!')
       DOMupdates.emptyClue(this.clueIndex);
       this.questionCounter++;
+      this.cycleRounds();
       console.log('questionCounter: ', this.questionCounter);
     } else if (this.playerAnswer !== this.clueAnswer && this.clueIndex === this.round.dailyDouble) {
-      console.log('check daily double')
       this.cyclePlayerTurn();
     } else {
       this.currentPlayer.subtractScore(index, this.cluePointValue);
       alert('You are wrong! Next player now answers the same question!')
       this.cyclePlayerTurn();
+    }
+  }
+
+  cycleRounds() {
+    if (this.questionCounter === 16) {
+      this.round = new Round(this.data)
+      DOMupdates.resetClueColorRoundTwo();
+      this.round.populateBoardWithCategories();
+      this.round.populateBoardWithClues();
+      this.roundCounter = 2;
     }
   }
 

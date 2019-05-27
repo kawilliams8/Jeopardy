@@ -1,4 +1,6 @@
 import fetch from 'cross-fetch';
+import Round from './Round.js';
+// import RoundTwo from './RoundTwo.js';
 // import data from '../src/data';
 
 var fetchData;
@@ -16,17 +18,15 @@ class Clue {
     this.data = fetchData || data;
     this.randomCategoryNums = [];
     this.randomCategoryNames;
-    this.usedCategories = [];
-    this.randomClues = [];
     this.categoryClues = [];
   }
 
   selectRandomCategories() {
     for (var i = 0; i <= 4; i++) {
       let num = Math.floor(Math.random() * 10) + 1;
-      if (this.randomCategoryNums.indexOf(num) === -1) {
-        this.randomCategoryNums.push(num);
-      }
+      if (this.randomCategoryNums.indexOf(num) === -1 && this.randomCategoryNums.length < 4) {
+        this.randomCategoryNums.push(num);        
+      } 
     }
   }
 
@@ -34,9 +34,17 @@ class Clue {
     let result = this.randomCategoryNums.map(category => {
       return Object.keys(this.data.categories).find(key => this.data.categories[key] === category).replace(/([A-Z])/g, ' $1').trim().toUpperCase();
     });
-    console.log(result)
+    console.log('round 1 result: ', result)
     this.randomCategoryNames = result;
   }
+
+  // getCategoryNameRoundTwo() { 
+    // let result = this.clue.roundTwoCategoryNums.map(category => {
+      // return Object.keys(this.data.categories).find(key => this.data.categories[key] === category).replace(/([A-Z])/g, ' $1').trim().toUpperCase();
+    // });
+    
+    // this.clue.randomCategoryNames = result;
+  // }
 
   
   findCluesForACategory() {

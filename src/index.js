@@ -37,9 +37,7 @@ $categoryOne.on('click', function() {
   game.saveClueValue(game.round.clue.categoryClues[0][clueId].pointValue);
   game.saveClueIndex('a' + clueId);
   game.round.checkDailyDouble(game);
-  // console.log(game.round.clue.categoryClues[0][clueId])
   console.log(game.round.clue.categoryClues[0][clueId].answer);
-  // console.log($categoryOne.index($(event.target)))
   DOMupdates.showDailyDouble();
 });
 
@@ -50,9 +48,7 @@ $categoryTwo.on('click', function() {
   game.saveClueValue(game.round.clue.categoryClues[1][clueId].pointValue)
   game.saveClueIndex('b' + clueId);
   game.round.checkDailyDouble(game);
-  // console.log(game.round.clue.categoryClues[1][clueId])
   console.log(game.round.clue.categoryClues[1][clueId].answer)
-  // console.log($categoryTwo.index($(event.target)))
   DOMupdates.showDailyDouble();
 });
 
@@ -63,9 +59,7 @@ $categoryThree.on('click', function() {
   game.saveClueValue(game.round.clue.categoryClues[2][clueId].pointValue)
   game.saveClueIndex('c' + clueId);
   game.round.checkDailyDouble(game);
-  // console.log(game.round.clue.categoryClues[2][clueId])
   console.log(game.round.clue.categoryClues[2][clueId].answer)
-  // console.log($categoryThree.index($(event.target)))
   DOMupdates.showDailyDouble();
 });
 
@@ -76,9 +70,7 @@ $categoryFour.on('click', function() {
   game.saveClueValue(game.round.clue.categoryClues[3][clueId].pointValue)
   game.saveClueIndex('d' + clueId);
   game.round.checkDailyDouble(game);
-  // console.log(game.round.clue.categoryClues[3][clueId])
   console.log(game.round.clue.categoryClues[3][clueId].answer)
-  // console.log($categoryFour.index($(event.target)))
   DOMupdates.showDailyDouble();
 });
 

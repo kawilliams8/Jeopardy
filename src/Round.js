@@ -20,6 +20,7 @@ class Round {
 
   populateBoardWithClues() {
     DOMupdates.changeClue1(this.clue.categoryClues[0])
+    console.log(this.clue.categoryClues[0])
     DOMupdates.changeClue2(this.clue.categoryClues[1])
     DOMupdates.changeClue3(this.clue.categoryClues[2])
     DOMupdates.changeClue4(this.clue.categoryClues[3])
@@ -45,11 +46,8 @@ class Round {
     console.log('dd:', this.dailyDouble)
     if (game.clueIndex === this.dailyDouble) {
       alert('DAILY DOUBLE! Please enter a wager')
-      // DOMupdates.displayDailyDoubleWager();
     }
-
   }
-
 }
 
 export default Round;

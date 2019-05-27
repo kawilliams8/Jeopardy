@@ -107,6 +107,10 @@ let DOMupdates = {
     $('.playerAnswerInput').val('');
   },
 
+  resetClueColorRoundTwo() {
+    $('td').removeClass('changeClueColor');
+  },
+
   resetGame() {
     window.location.reload(true);
   }
