@@ -1,6 +1,5 @@
 import Round from './Round.js';
 import Player from './Player.js';
-import RoundTwo from './RoundTwo.js';
 // import Clue from './Clue.js';
 import DOMupdates from './DOMupdates';
 
@@ -11,7 +10,7 @@ class Game {
     this.round;
     this.player;
     this.players = [];
-    this.questionCounter = 14;
+    this.questionCounter = 0;
     this.roundCounter = 0;
     this.currentPlayer = null;
     this.clueAnswer;
@@ -68,14 +67,13 @@ class Game {
       DOMupdates.emptyClue(this.clueIndex);
       this.questionCounter++;
       this.cycleRounds();
-      console.log('questionCounter: ', this.questionCounter);
     } else if (this.playerAnswer !== this.clueAnswer && this.clueIndex === this.round.dailyDouble) {
       this.cyclePlayerTurn();
     } else {
       if (this.roundCounter === 2) {
         this.currentPlayer.subtractDoubleScore(index, this.cluePointValue)
       } else {
-      this.currentPlayer.subtractScore(index, this.cluePointValue);
+        this.currentPlayer.subtractScore(index, this.cluePointValue);
       }
       alert('You are wrong! Next player now answers the same question!')
       this.cyclePlayerTurn();
@@ -91,7 +89,11 @@ class Game {
       this.roundCounter = 2;
       this.populateBoardWithValues();
       DOMupdates.displayCurrentRound(this.round.rounds[1]);
-    }
+    } 
+
+    // if (this.questionCounter === 32) {
+
+    // }
   }
 
   cyclePlayerTurn() {

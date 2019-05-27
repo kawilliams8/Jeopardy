@@ -5,8 +5,8 @@ import './images/jeopardy-logo.png';
 import './images/wallpaper.jpg';
 import data from './data'
 import Game from './Game.js';
-import Round from './Round.js';
-import Player from './Player.js';
+// import Round from './Round.js';
+// import Player from './Player.js';
 // import Clue from './Clue.js';
 import DOMupdates from './DOMupdates';
 

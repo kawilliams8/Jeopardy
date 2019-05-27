@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import Player from './Player';
+// import Player from './Player';
 // import Clue from './Clue.js';
 // import data from '../src/data';
 // const clue = new Clue();
@@ -26,7 +26,7 @@ let DOMupdates = {
   },
 
   displayCurrentRound(round) {
-    $('.currentRound').text(round)
+    $('.currentRound').text(round);
   },
 
   displayCurrentPlayer(currentPlayer, lastPlayer) {
@@ -86,7 +86,7 @@ let DOMupdates = {
   getPlayerAnswer(game) {
     game.savePlayerAnswer(
       $('.playerAnswerInput').val()
-      );
+    );
   },
 
   updatePlayerScore(index, score) {

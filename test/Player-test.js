@@ -2,8 +2,11 @@ import chai from 'chai'
 const expect = chai.expect;
 import Player from '../src/Player.js'
 import spies from 'chai-spies';
+import DOMupdates from '../src/DOMupdates.js';
 chai.use(spies);
 import data from '../src/data';
+
+chai.spy.on(DOMupdates, 'updatePlayerScore', () => true);
 
 describe('Player', function() {
   let player;
@@ -25,13 +28,23 @@ describe('Player', function() {
   });
 
   it('should increment the score of a correct answer', function() {
-    player.addScore(100);
+    player.addScore(0, 100);
     expect(player.score).to.equal(100);
   });
   
   it('should decrement the score of a wrong answer', function() {
-    player.subtractScore(100);
+    player.subtractScore(0, 100);
     expect(player.score).to.equal(-100);
+  });
+
+  it('should add double the point value in round 2', function() {
+    player.addDoubleScore(0, 100);
+    expect(player.score).to.equal(200);
+  });
+
+  it('should subtract double the point value in round 2', function() {
+    player.subtractDoubleScore(0, 100);
+    expect(player.score).to.equal(-200);
   });
 
 });

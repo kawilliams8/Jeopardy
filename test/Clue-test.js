@@ -32,11 +32,11 @@ describe('Clue', function() {
   });
 
   it('should keep track of all used categories', function() {
-    expect(clue.usedCategories).to.be.an('array');
+    expect(clue.categoryClues).to.be.an('array');
   });
 
   it('should choose all questions that match the category', function() {
-    expect(clue.randomClues.length).to.be.a('number');
+    expect(clue.categoryClues.length).to.be.a('number');
   });
 
   it('should create an array with category names', function() {

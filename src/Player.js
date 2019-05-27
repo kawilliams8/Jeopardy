@@ -1,6 +1,6 @@
 import DOMupdates from './DOMupdates.js';
-import Game from './Game.js';
-import Round from './Round.js';
+// import Game from './Game.js';
+// import Round from './Round.js';
 
 class Player {
   constructor(name) {

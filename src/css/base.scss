@@ -18,6 +18,12 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  .currentRound {
+    color: black;
+    font-family: $oswald;
+    font-size: 36px;
+  }
 }
 
 .gameButtons {
