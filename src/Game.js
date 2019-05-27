@@ -11,7 +11,7 @@ class Game {
     this.round;
     this.player;
     this.players = [];
-    this.questionCounter = 0;
+    this.questionCounter = 14;
     this.roundCounter = 0;
     this.currentPlayer = null;
     this.clueAnswer;
@@ -34,6 +34,7 @@ class Game {
     }
     this.currentPlayer = this.players[0];
     DOMupdates.displayCurrentPlayer('.player1Input');
+    DOMupdates.displayCurrentRound(this.round.rounds[0]);
     DOMupdates.disableStartButton();
     DOMupdates.hideDailyDouble();
   }
@@ -58,7 +59,11 @@ class Game {
   checkPlayerAnswer() {
     let index = this.players.indexOf(this.currentPlayer);
     if (this.playerAnswer === this.clueAnswer) {
-      this.currentPlayer.addScore(index, this.cluePointValue);
+      if (this.roundCounter === 2) {
+        this.currentPlayer.addDoubleScore(index, this.cluePointValue);
+      } else {
+        this.currentPlayer.addScore(index, this.cluePointValue)
+      }
       alert('You are correct! Please choose another clue!')
       DOMupdates.emptyClue(this.clueIndex);
       this.questionCounter++;
@@ -67,7 +72,11 @@ class Game {
     } else if (this.playerAnswer !== this.clueAnswer && this.clueIndex === this.round.dailyDouble) {
       this.cyclePlayerTurn();
     } else {
+      if (this.roundCounter === 2) {
+        this.currentPlayer.subtractDoubleScore(index, this.cluePointValue)
+      } else {
       this.currentPlayer.subtractScore(index, this.cluePointValue);
+      }
       alert('You are wrong! Next player now answers the same question!')
       this.cyclePlayerTurn();
     }
@@ -80,6 +89,8 @@ class Game {
       this.round.populateBoardWithCategories();
       this.round.populateBoardWithClues();
       this.roundCounter = 2;
+      this.populateBoardWithValues();
+      DOMupdates.displayCurrentRound(this.round.rounds[1]);
     }
   }
 
@@ -95,6 +106,12 @@ class Game {
       DOMupdates.displayCurrentPlayer('.player1Input', '.player3Input');
     }
   }
+
+  populateBoardWithValues() {
+    DOMupdates.changeClueValue();
+  }
+
+
 
   resetGame() {
     DOMupdates.resetGame();

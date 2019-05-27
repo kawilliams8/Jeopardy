@@ -6,7 +6,7 @@ import DOMupdates from './DOMupdates.js';
 class Round {
   constructor(data) {
     this.data = data;
-    this.rounds = ['Jeopardy', 'Double Jeopardy', 'Final Jeopardy'];
+    this.rounds = ['Round 1: Jeopardy', 'Round 2: Double Jeopardy', 'Round 3: Final Jeopardy'];
     this.dailyDouble = '';
     this.clue = new Clue(data);
   }
@@ -20,7 +20,6 @@ class Round {
 
   populateBoardWithClues() {
     DOMupdates.changeClue1(this.clue.categoryClues[0])
-    console.log(this.clue.categoryClues[0])
     DOMupdates.changeClue2(this.clue.categoryClues[1])
     DOMupdates.changeClue3(this.clue.categoryClues[2])
     DOMupdates.changeClue4(this.clue.categoryClues[3])

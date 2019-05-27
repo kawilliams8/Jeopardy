@@ -34,7 +34,7 @@ $categoryOne.on('click', function() {
   let clueId = $categoryOne.index($(event.target));
   $(event.target).text(game.round.clue.categoryClues[0][clueId].question).addClass('changeClueColor');
   game.saveClueAnswer(game.round.clue.categoryClues[0][clueId].answer);
-  game.saveClueValue(game.round.clue.categoryClues[0][clueId].pointValue);
+  game.saveClueValue(game.round.clue.categoryClues[0][clueId].pointValue * 2);
   game.saveClueIndex('a' + clueId);
   game.round.checkDailyDouble(game);
   console.log(game.round.clue.categoryClues[0][clueId].answer);

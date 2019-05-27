@@ -25,6 +25,10 @@ let DOMupdates = {
     $('.player').eq(2).text($('.playerInput').eq(2).val());
   },
 
+  displayCurrentRound(round) {
+    $('.currentRound').text(round)
+  },
+
   displayCurrentPlayer(currentPlayer, lastPlayer) {
     let newArticle = $(
       `<input class="playerAnswerInput" type="text" placeholder="Enter your answer">`
@@ -34,16 +38,6 @@ let DOMupdates = {
     $(`${currentPlayer}`).css('border-radius', '5px');
     $(lastPlayer).empty().css('border', '');
   },
-
-  // displayDailyDoubleWager(currentPlayer) {
-  //   let newArticle = $(
-  //     `<p>Daily Double</p>
-  //     <p>Enter wager between $5 and your current score.</p>
-  //     <input class="playerWagerInput" type="number" placeholder="Enter your wager">
-  //     <button class="submitWager">Submit Wager</button>`
-  //   )
-  //   $('#dd').append(newArticle);
-  // },
 
   getPlayerWager(currentPlayer) {
     currentPlayer.acceptWager(
@@ -109,6 +103,13 @@ let DOMupdates = {
 
   resetClueColorRoundTwo() {
     $('td').removeClass('changeClueColor');
+  },
+
+  changeClueValue() {
+    $('.200').text('$200')
+    $('.400').text('$400')
+    $('.600').text('$600')
+    $('.800').text('$800')
   },
 
   resetGame() {

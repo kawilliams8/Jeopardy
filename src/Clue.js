@@ -38,14 +38,6 @@ class Clue {
     this.randomCategoryNames = result;
   }
 
-  // getCategoryNameRoundTwo() { 
-    // let result = this.clue.roundTwoCategoryNums.map(category => {
-      // return Object.keys(this.data.categories).find(key => this.data.categories[key] === category).replace(/([A-Z])/g, ' $1').trim().toUpperCase();
-    // });
-    
-    // this.clue.randomCategoryNames = result;
-  // }
-
   
   findCluesForACategory() {
     return this.randomCategoryNums.map(category => {
