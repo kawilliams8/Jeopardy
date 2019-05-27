@@ -51,6 +51,14 @@ let DOMupdates = {
     );
   },
 
+  showDailyDouble() {
+    $('.wager').show();
+  },
+
+  hideDailyDouble() {
+    $('.wager').hide();
+  },
+
   changeCategory(category) {
     $('.category').each((index, curCategory) => {
       $(curCategory).text(category[index])

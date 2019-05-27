@@ -34,6 +34,7 @@ class Game {
     this.currentPlayer = this.players[0];
     DOMupdates.displayCurrentPlayer('.player1Input');
     DOMupdates.disableStartButton();
+    DOMupdates.hideDailyDouble();
   }
 
   saveClueAnswer(answer) {
