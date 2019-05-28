@@ -30,11 +30,11 @@ header {
 
   .reset {
     background: $blue;
+    border-radius: 5px;
     color: white;
     font-family: $oswald;
     font-size: 28px;
     height: 50px;
-    border-radius: 5px;
     margin: 20px;
     width: 150px;
   }
@@ -54,10 +54,10 @@ table {
     background-color: #0033CC;
     border: 4px solid black;
     font-family: "Oswald", sans-serif;
-    padding: 5px;
-    width: 250px;
     height: 100px;
+    padding: 5px;
     text-align: center;
+    width: 250px;
   }
 
   .categories {
@@ -79,8 +79,8 @@ table {
 
 //Player display and inputs
 aside {
-  width: 25%;
   margin: 0 auto;
+  width: 25%;
   
   article {
     height: 120px;
@@ -89,8 +89,8 @@ aside {
 
   .instructions {
     font-size: 24px;
-    padding-left: 20px;
     padding-bottom: 20px;
+    padding-left: 20px;
   }
 
   .flexPlayers {
@@ -100,8 +100,8 @@ aside {
   }
 
   h2, .playerScore {
-    font-size: 36px;
     font-family: $oswald;
+    font-size: 36px;
     margin: 0;
   }
 
@@ -117,8 +117,8 @@ aside {
   input {
     border-radius: 5px;
     font-size: 18px;
-    width: 92%;
     padding: 10px;
+    width: 92%;
   }
 
   .dailyDoubleTitle, p {
@@ -133,12 +133,12 @@ aside {
     font-size: 16px;
   }
 
-  .submit, .submitAnswer, .submitWager, .finalWager {
+  .submit, .submitAnswer, .submitWager, .finalWagerButton, .finalAnswerButton {
     background: $gold;
+    border-radius: 5px;
     color: black;
     font-family: $oswald;
     font-size: 28px;
-    border-radius: 5px;
     margin-bottom: 10px;
     width: 100%;
   }
@@ -161,7 +161,6 @@ aside {
       width: 35%;
     }
   }
-
   
 
 }

@@ -5,8 +5,6 @@ import './images/jeopardy-logo.png';
 import './images/wallpaper.jpg';
 import data from './data'
 import Game from './Game.js';
-// import Player from './Player.js';
-// import Clue from './Clue.js';
 import DOMupdates from './DOMupdates';
 
 
@@ -16,6 +14,11 @@ let $categoryTwo = $('.clue2');
 let $categoryThree = $('.clue3');
 let $categoryFour = $('.clue4');
 
+
+$(document).ready(() => {
+  DOMupdates.hideDailyDouble();
+  DOMupdates.hideButtons();
+});
 
 $('.submit').on('click', function(e) {
   e.preventDefault();
@@ -36,7 +39,6 @@ $categoryOne.on('click', function() {
   game.saveClueValue(game.round.clue.categoryClues[0][clueId].pointValue * 2);
   game.saveClueIndex('a' + clueId);
   game.round.checkDailyDouble(game);
-  console.log(game.round.clue.categoryClues[0][clueId].answer);
 
   if (event.target.id === game.round.dailyDouble || event.target.id === game.round.doubleDailyDouble) {
     DOMupdates.showDailyDouble();
@@ -51,7 +53,6 @@ $categoryTwo.on('click', function() {
   game.saveClueValue(game.round.clue.categoryClues[1][clueId].pointValue)
   game.saveClueIndex('b' + clueId);
   game.round.checkDailyDouble(game);
-  console.log(game.round.clue.categoryClues[1][clueId].answer)
   if (event.target.id === game.round.dailyDouble || event.target.id === game.round.doubleDailyDouble) {
     DOMupdates.showDailyDouble();
   }
@@ -64,7 +65,6 @@ $categoryThree.on('click', function() {
   game.saveClueValue(game.round.clue.categoryClues[2][clueId].pointValue)
   game.saveClueIndex('c' + clueId);
   game.round.checkDailyDouble(game);
-  console.log(game.round.clue.categoryClues[2][clueId].answer)
   if (event.target.id === game.round.dailyDouble || event.target.id === game.round.doubleDailyDouble) {
     DOMupdates.showDailyDouble();
   }
@@ -77,7 +77,6 @@ $categoryFour.on('click', function() {
   game.saveClueValue(game.round.clue.categoryClues[3][clueId].pointValue)
   game.saveClueIndex('d' + clueId);
   game.round.checkDailyDouble(game);
-  console.log(game.round.clue.categoryClues[3][clueId].answer)
   if (event.target.id === game.round.dailyDouble || event.target.id === game.round.doubleDailyDouble) {
     DOMupdates.showDailyDouble();
   }
@@ -91,7 +90,6 @@ $('.submitAnswer').on('click', function(e) {
 
 $('.submitWager').on('click', function (e) {
   e.preventDefault();
-  console.log(game.currentPlayer)
   DOMupdates.hideDailyDouble();
   DOMupdates.getPlayerWager(game.currentPlayer);
 });
@@ -100,4 +98,9 @@ $('.finalWagerButton').on('click', function (e) {
   e.preventDefault();
   DOMupdates.saveFinalWager(game)
   DOMupdates.finalJeopardyPlayerInputs()
+});
+
+$('.finalAnswerButton').on('click', function (e) {
+  e.preventDefault();
+  DOMupdates.saveFinalAnswer(game)
 });

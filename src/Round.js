@@ -39,7 +39,6 @@ class Round {
       dailyDouble.push(numbers.charAt(Math.floor(Math.random() * numbersLength)));
     }
     this.dailyDouble = dailyDouble.join('');
-    console.log('random DD: ', this.dailyDouble);
   }
 
   selectRoundTwoRandomDailyDoubles() {
@@ -55,11 +54,9 @@ class Round {
       doubleDailyDouble.push(numbers.charAt(Math.floor(Math.random() * numbersLength)));
     }
     this.doubleDailyDouble = doubleDailyDouble.join('');
-    console.log('random DDD: ', this.doubleDailyDouble);
   }
 
   checkDailyDouble(game) {
-    console.log('dd:', this.dailyDouble)
     if (game.clueIndex === this.dailyDouble || game.clueIndex === this.doubleDailyDouble) {
       DOMupdates.showInstructions('DAILY DOUBLE! Please enter a wager between $5 and current score.')
     }
