@@ -5,7 +5,6 @@ import './images/jeopardy-logo.png';
 import './images/wallpaper.jpg';
 import data from './data'
 import Game from './Game.js';
-// import Round from './Round.js';
 // import Player from './Player.js';
 // import Clue from './Clue.js';
 import DOMupdates from './DOMupdates';
@@ -95,4 +94,10 @@ $('.submitWager').on('click', function (e) {
   console.log(game.currentPlayer)
   DOMupdates.hideDailyDouble();
   DOMupdates.getPlayerWager(game.currentPlayer);
+});
+
+$('.finalWagerButton').on('click', function (e) {
+  e.preventDefault();
+  DOMupdates.saveFinalWager(game)
+  DOMupdates.finalJeopardyPlayerInputs()
 });

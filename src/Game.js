@@ -1,5 +1,6 @@
 import Round from './Round.js';
 import Player from './Player.js';
+import FinalJeopardy from './FinalJeopardy.js';
 // import Clue from './Clue.js';
 import DOMupdates from './DOMupdates';
 
@@ -11,7 +12,7 @@ class Game {
     this.player;
     this.players = [];
     this.questionCounter = 0;
-    this.roundCounter = 0;
+    this.roundCounter = 30;
     this.currentPlayer = null;
     this.clueAnswer;
     this.cluePointValue;
@@ -57,7 +58,9 @@ class Game {
 
   checkPlayerAnswer() {
     let index = this.players.indexOf(this.currentPlayer);
-    if (this.playerAnswer === this.clueAnswer) {
+    if (this.roundCounter === 3){
+      console.log('round 3')
+    } else if (this.playerAnswer === this.clueAnswer) {
       if (this.roundCounter === 2) {
         this.currentPlayer.addDoubleScore(index, this.cluePointValue);
       } else {
@@ -92,15 +95,15 @@ class Game {
       this.round.selectRandomDailyDouble();
       this.round.selectRoundTwoRandomDailyDoubles();
       // let doubleDoubles = this.round.selectRandomDailyDouble();
-      console.log('1st dd: ', this.round.dailyDouble);
-      console.log('2nd dd: ', this.round.doubleDailyDouble)
-    } 
-
-
-
-    // if (this.questionCounter === 32) {
-
-    // }
+      // console.log('1st dd: ', this.round.dailyDouble);
+      // console.log('2nd dd: ', this.round.doubleDailyDouble)
+    } else {
+      (this.questionCounter === 32)
+      this.round = new Round(this.data);
+      this.finalJeopardy = new FinalJeopardy(this.data)
+      this.roundCounter = 3;
+      this.finalJeopardy.startFinalRound()
+    }
   }
 
   cyclePlayerTurn() {
@@ -119,8 +122,6 @@ class Game {
   populateBoardWithValues() {
     DOMupdates.changeClueValue();
   }
-
-
 
   resetGame() {
     DOMupdates.resetGame();

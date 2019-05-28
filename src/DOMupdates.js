@@ -14,7 +14,6 @@ let DOMupdates = {
     );
   },
 
-
   disableStartButton() {
     $('.submit').prop('disabled', true);
   },
@@ -37,6 +36,68 @@ let DOMupdates = {
     $(`${currentPlayer}`).css('border', 'solid #F3C53D 5px');
     $(`${currentPlayer}`).css('border-radius', '5px');
     $(lastPlayer).empty().css('border', '');
+  },
+
+  hideGameboard() {
+    $('.gameboard').hide();
+    $('.playerAnswerInput').hide().css('border', '');
+    $('#test').hide().css('border', '');
+  },
+
+  finalJeopardy(category, question){
+    let newGameBoard = $(
+      `<h1>${category}</h1>
+      <p>${question}</p>`
+    )
+    $('.finalJeopardy').append(newGameBoard)
+  },
+
+  showWagerInputs() {
+    let finalWagerInputOne = $(
+      `<input class='finalWagerInputOne' type='text' placeholder='Enter your wager'></input>`
+    )
+
+    let finalWagerInputTwo = $(
+      `<input class='finalWagerInputTwo' type='text' placeholder='Enter your wager'></input>`
+    )
+
+    let finalWagerInputThree = $(
+      `<input class='finalWagerInputThree' type='text' placeholder='Enter your wager'></input>`
+    )
+
+    $('.playerFinalWagerOne').append(finalWagerInputOne);
+    $('.playerFinalWagerTwo').append(finalWagerInputTwo);
+    $('.playerFinalWagerThree').append(finalWagerInputThree);
+    $('.submitAnswer').hide()
+  },
+
+  saveFinalWager(game) {
+    game.finalJeopardy.collectWagers(
+      $('.finalWagerInputOne').val(), 
+      $('.finalWagerInputTwo').val(), 
+      $('.finalWagerInputThree').val()
+    )
+  },
+
+  finalJeopardyPlayerInputs(){
+    $('.finalWagerInputOne').hide()
+    $('.finalWagerInputTwo').hide()
+    $('.finalWagerInputThree').hide()
+    let finalAnswerInputOne = $(
+      `<input type='text' placeholder='Enter your answer'></input>`
+    )
+
+    let finalAnswerInputTwo = $(
+      `<input type='text' placeholder='Enter your answer'></input>`
+    )
+
+    let finalAnswerInputThree = $(
+      `<input type='text' placeholder='Enter your answer'></input>`
+    )
+
+    $('.playerFinalWagerOne').append(finalAnswerInputOne);
+    $('.playerFinalWagerTwo').append(finalAnswerInputTwo);
+    $('.playerFinalWagerThree').append(finalAnswerInputThree);
   },
 
   getPlayerWager(currentPlayer) {
