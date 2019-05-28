@@ -48,6 +48,7 @@ h1 img {
 //Gameboard
 table {
   height: 700px;
+  margin-left: 30px;
 
   td {
     background-color: #0033CC;
@@ -78,11 +79,18 @@ table {
 
 //Player display and inputs
 aside {
-  width: 18%;
+  width: 25%;
+  margin: 0 auto;
   
   article {
     height: 120px;
     margin: 0 0 20px 20px;
+  }
+
+  .instructions {
+    font-size: 24px;
+    padding-left: 20px;
+    padding-bottom: 20px;
   }
 
   .flexPlayers {

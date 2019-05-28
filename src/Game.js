@@ -63,7 +63,7 @@ class Game {
       } else {
         this.currentPlayer.addScore(index, this.cluePointValue)
       }
-      alert('You are correct! Please choose another clue!')
+      DOMupdates.showInstructions('CORRECT! Choose another clue!');
       DOMupdates.emptyClue(this.clueIndex);
       this.questionCounter++;
       this.cycleRounds();
@@ -75,7 +75,7 @@ class Game {
       } else {
         this.currentPlayer.subtractScore(index, this.cluePointValue);
       }
-      alert('You are wrong! Next player now answers the same question!')
+      DOMupdates.showInstructions('INCORRECT! Next player, take a guess!')
       this.cyclePlayerTurn();
     }
   }
@@ -89,7 +89,14 @@ class Game {
       this.roundCounter = 2;
       this.populateBoardWithValues();
       DOMupdates.displayCurrentRound(this.round.rounds[1]);
+      this.round.selectRandomDailyDouble();
+      this.round.selectRoundTwoRandomDailyDoubles();
+      // let doubleDoubles = this.round.selectRandomDailyDouble();
+      console.log('1st dd: ', this.round.dailyDouble);
+      console.log('2nd dd: ', this.round.doubleDailyDouble)
     } 
+
+
 
     // if (this.questionCounter === 32) {
 
