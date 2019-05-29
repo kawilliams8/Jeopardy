@@ -8,6 +8,7 @@ chai.use(spies);
 
 chai.spy.on(DOMupdates, 'startGame', () => true);
 
+
 describe('Game', function() {
   let game;
   beforeEach(function () {

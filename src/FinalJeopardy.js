@@ -23,7 +23,7 @@ class FinalJeopardy extends Round {
   }
 
   collectWagers (wager1, wager2, wager3) {
-    this.wagers.push(wager1, wager2, wager3)
+    this.wagers.push(wager1, wager2, wager3);
     DOMupdates.finalJeopardy(this.clue.randomCategoryNames[0], this.clue.categoryClues[0][0].question);
     DOMupdates.showInstructions('Enter a guess for the clue.')
   }
