@@ -39,6 +39,7 @@ $categoryOne.on('click', function() {
   game.saveClueValue(game.round.clue.categoryClues[0][clueId].pointValue * 2);
   game.saveClueIndex('a' + clueId);
   game.round.checkDailyDouble(game);
+  console.log(game.round.clue.categoryClues[0][clueId].answer)
 
   if (event.target.id === game.round.dailyDouble || event.target.id === game.round.doubleDailyDouble) {
     DOMupdates.showDailyDouble();
@@ -53,6 +54,8 @@ $categoryTwo.on('click', function() {
   game.saveClueValue(game.round.clue.categoryClues[1][clueId].pointValue)
   game.saveClueIndex('b' + clueId);
   game.round.checkDailyDouble(game);
+  console.log(game.round.clue.categoryClues[1][clueId].answer)
+
   if (event.target.id === game.round.dailyDouble || event.target.id === game.round.doubleDailyDouble) {
     DOMupdates.showDailyDouble();
   }
@@ -65,6 +68,8 @@ $categoryThree.on('click', function() {
   game.saveClueValue(game.round.clue.categoryClues[2][clueId].pointValue)
   game.saveClueIndex('c' + clueId);
   game.round.checkDailyDouble(game);
+  console.log(game.round.clue.categoryClues[2][clueId].answer)
+
   if (event.target.id === game.round.dailyDouble || event.target.id === game.round.doubleDailyDouble) {
     DOMupdates.showDailyDouble();
   }
@@ -77,6 +82,8 @@ $categoryFour.on('click', function() {
   game.saveClueValue(game.round.clue.categoryClues[3][clueId].pointValue)
   game.saveClueIndex('d' + clueId);
   game.round.checkDailyDouble(game);
+  console.log(game.round.clue.categoryClues[3][clueId].answer)
+
   if (event.target.id === game.round.dailyDouble || event.target.id === game.round.doubleDailyDouble) {
     DOMupdates.showDailyDouble();
   }
@@ -103,5 +110,4 @@ $('.finalWagerButton').on('click', function (e) {
 $('.finalAnswerButton').on('click', function (e) {
   e.preventDefault();
   DOMupdates.saveFinalAnswer(game);
-  game.finalJeopardy.checkAnswer()
 });
