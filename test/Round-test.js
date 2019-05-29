@@ -26,6 +26,12 @@ describe('Round', function() {
 
   it('should create a new instance', function() {
     expect(round).to.be.an.instanceof(Round);
+  });
+
+  it('should have default properties', function() {
+    expect(round.rounds).to.be.an('array');
+    expect(round.dailyDouble).to.be.an('string')
+    expect(round.doubleDailyDouble).to.be.an('string')
   })
 
   it('should invoke the method of populating categories', function() {
@@ -36,6 +42,16 @@ describe('Round', function() {
   it('should invoke the method of populating clues', function() {
     round.populateBoardWithClues();
     expect(DOMupdates.changeClue1).to.have.been.called(1);
+  });
+
+  it('should select a daily double', function() {
+    round.selectRandomDailyDouble();
+    expect(round.dailyDouble).to.be.a('string')
+  });
+
+  it('should select two daily doubles for round two', function() {
+    round.selectRoundTwoRandomDailyDoubles();
+    expect(round.doubleDailyDouble).to.be.a('string')
   });
 
 });

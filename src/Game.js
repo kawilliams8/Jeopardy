@@ -12,7 +12,7 @@ class Game {
     this.player;
     this.players = [];
     this.questionCounter = 0;
-    this.roundCounter = 30;
+    this.roundCounter = 0;
     this.currentPlayer = null;
     this.clueAnswer;
     this.cluePointValue;
@@ -58,9 +58,7 @@ class Game {
 
   checkPlayerAnswer() {
     let index = this.players.indexOf(this.currentPlayer);
-    if (this.roundCounter === 3) {
-      console.log('round 3')
-    } else if (this.playerAnswer === this.clueAnswer) {
+    if (this.playerAnswer === this.clueAnswer) {
       if (this.roundCounter === 2) {
         this.currentPlayer.addDoubleScore(index, this.cluePointValue);
       } else {
@@ -80,6 +78,7 @@ class Game {
       }
       DOMupdates.showInstructions('INCORRECT! Next player, take a guess!')
       this.cyclePlayerTurn();
+      this.cycleRounds();
     }
   }
 
@@ -94,12 +93,12 @@ class Game {
       DOMupdates.displayCurrentRound(this.round.rounds[1]);
       this.round.selectRandomDailyDouble();
       this.round.selectRoundTwoRandomDailyDoubles();
+    } else if(this.questionCounter === 32){
+        this.round = new Round(this.data);
+        this.finalJeopardy = new FinalJeopardy(this.data)
+        this.roundCounter = 3;
+        this.finalJeopardy.startFinalRound()
     } else {
-      (this.questionCounter === 32)
-      this.round = new Round(this.data);
-      this.finalJeopardy = new FinalJeopardy(this.data)
-      this.roundCounter = 3;
-      this.finalJeopardy.startFinalRound()
     }
   }
 
