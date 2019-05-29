@@ -47,4 +47,9 @@ describe('Player', function() {
     expect(player.score).to.equal(-200);
   });
 
+  it('should accept a player wager for the daily double', function() {
+    player.acceptWager(100);
+    expect(player.wager).to.equal(100)
+  })
+
 });

@@ -12,7 +12,7 @@ class Game {
     this.player;
     this.players = [];
     this.questionCounter = 0;
-    this.roundCounter = 30;
+    this.roundCounter = 0;
     this.currentPlayer = null;
     this.clueAnswer;
     this.cluePointValue;
@@ -99,6 +99,7 @@ class Game {
       this.round = new Round(this.data);
       this.finalJeopardy = new FinalJeopardy(this.data)
       this.roundCounter = 3;
+      this.currentPlayer = this.players[0];
       this.finalJeopardy.startFinalRound()
     }
   }

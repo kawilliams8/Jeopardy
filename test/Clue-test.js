@@ -21,19 +21,23 @@ describe('Clue', function() {
     expect(clue).to.be.an.instanceOf(Clue);
   });
 
-  it.skip('should shuffle categories', function() {
+  it('should have default properties', function() {
+    expect(clue.randomCategoryNums).to.be.an('array');
+    expect(clue.categoryClues).to.be.an('array');
+  })
+
+  it('should shuffle categories', function() {
+    clue.selectRandomCategories();
     expect(clue.randomCategoryNums.length).to.equal(4)
   });
 
-  it('should create an array that contains 4 numbers', function() {    
+  it('should create an array that contains 4 numbers', function() {
+    clue.selectRandomCategories();
     expect(clue.randomCategoryNums).to.be.an('array');
   });
 
-  it('should keep track of all used categories', function() {
-    expect(clue.categoryClues).to.be.an('array');
-  });
-
   it('should choose all questions that match the category', function() {
+    clue.findCluesForACategory();
     expect(clue.categoryClues.length).to.be.a('number');
   });
 

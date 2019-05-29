@@ -102,5 +102,6 @@ $('.finalWagerButton').on('click', function (e) {
 
 $('.finalAnswerButton').on('click', function (e) {
   e.preventDefault();
-  DOMupdates.saveFinalAnswer(game)
+  DOMupdates.saveFinalAnswer(game);
+  game.finalJeopardy.checkAnswer()
 });

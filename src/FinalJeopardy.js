@@ -14,12 +14,11 @@ class FinalJeopardy extends Round {
     this.clue.selectRandomCategories();
     this.clue.getCategoryName();
     this.clue.findCluesForACategory();
-    this.answer = this.clue.categoryClues[0][0].answer;
+    this.answer = this.clue.categoryClues[0][0].answer.toLowerCase();
     DOMupdates.hideGameboard();
     DOMupdates.showWagerInputs();
     DOMupdates.displayCurrentRound(this.rounds[2]);
     DOMupdates.showInstructions('Enter a wager higher than $5 but lower than your current amount.')
-
   }
 
   collectWagers (wager1, wager2, wager3) {
