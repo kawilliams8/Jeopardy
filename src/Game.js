@@ -58,7 +58,7 @@ class Game {
 
   checkPlayerAnswer() {
     let index = this.players.indexOf(this.currentPlayer);
-    if (this.roundCounter === 3){
+    if (this.roundCounter === 3) {
       console.log('round 3')
     } else if (this.playerAnswer === this.clueAnswer) {
       if (this.roundCounter === 2) {
@@ -94,9 +94,6 @@ class Game {
       DOMupdates.displayCurrentRound(this.round.rounds[1]);
       this.round.selectRandomDailyDouble();
       this.round.selectRoundTwoRandomDailyDoubles();
-      // let doubleDoubles = this.round.selectRandomDailyDouble();
-      // console.log('1st dd: ', this.round.dailyDouble);
-      // console.log('2nd dd: ', this.round.doubleDailyDouble)
     } else {
       (this.questionCounter === 32)
       this.round = new Round(this.data);

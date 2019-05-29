@@ -1,7 +1,4 @@
 import fetch from 'cross-fetch';
-// import Round from './Round.js';
-// import RoundTwo from './RoundTwo.js';
-// import data from '../src/data';
 
 var fetchData;
 fetch('https://fe-apps.herokuapp.com/api/v1/gametime/1903/jeopardy/data')
@@ -34,7 +31,6 @@ class Clue {
     let result = this.randomCategoryNums.map(category => {
       return Object.keys(this.data.categories).find(key => this.data.categories[key] === category).replace(/([A-Z])/g, ' $1').trim().toUpperCase();
     });
-    console.log('round 1 result: ', result)
     this.randomCategoryNames = result;
   }
 

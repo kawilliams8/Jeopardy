@@ -2,9 +2,7 @@ import chai from 'chai';
 const expect = chai.expect;
 import data from '../src/data';
 import DOMupdates from '../src/DOMupdates.js';
-// import Game from '../src/Game.js';
 import Round from '../src/Round.js';
-// import Clue from '../src/Clue.js';
 import spies from 'chai-spies';
 chai.use(spies);
 

@@ -1,8 +1,4 @@
 import $ from 'jquery';
-// import Player from './Player';
-// import Clue from './Clue.js';
-// import data from '../src/data';
-// const clue = new Clue();
 
 let DOMupdates = {
 
@@ -44,12 +40,15 @@ let DOMupdates = {
     $('#test').hide().css('border', '');
   },
 
-  finalJeopardy(category, question){
+  finalJeopardy(category, question) {
     let newGameBoard = $(
-      `<h1>${category}</h1>
-      <p>${question}</p>`
+      `<h1 class='finalCategory'>${category}</h1>
+      <p class='finalClue'>${question}</p>`
     )
     $('.finalJeopardy').append(newGameBoard)
+    $('.finalCategory, .finalClue').css({'background-color': '#0033CC', 'color': '#ffffff', 'font-family': 'Oswald', 'border': '4px solid black', 'text-align': 'center', 'box-sizing': 'border-box', 'height': '225px', 'width': '325px', 'border-radius': '2px', 'margin': '40px', 'padding-top': '50px', 'margin-left': '90px'})
+    $('.finalClue').css({'text-transform': 'uppercase', 'padding': '20px', 'font-size': '20px'})
+
   },
 
   showWagerInputs() {
@@ -69,6 +68,7 @@ let DOMupdates = {
     $('.playerFinalWagerTwo').append(finalWagerInputTwo);
     $('.playerFinalWagerThree').append(finalWagerInputThree);
     $('.submitAnswer').hide()
+    $('.finalWagerButton').show();
   },
 
   saveFinalWager(game) {
@@ -79,25 +79,35 @@ let DOMupdates = {
     )
   },
 
-  finalJeopardyPlayerInputs(){
+  finalJeopardyPlayerInputs() {
     $('.finalWagerInputOne').hide()
     $('.finalWagerInputTwo').hide()
     $('.finalWagerInputThree').hide()
     let finalAnswerInputOne = $(
-      `<input type='text' placeholder='Enter your answer'></input>`
+      `<input class='finalAnswerInputOne' type='text' placeholder='Enter your answer'></input>`
     )
 
     let finalAnswerInputTwo = $(
-      `<input type='text' placeholder='Enter your answer'></input>`
+      `<input class='finalAnswerInputTwo' type='text' placeholder='Enter your answer'></input>`
     )
 
     let finalAnswerInputThree = $(
-      `<input type='text' placeholder='Enter your answer'></input>`
+      `<input class='finalAnswerInputThree' type='text' placeholder='Enter your answer'></input>`
     )
 
     $('.playerFinalWagerOne').append(finalAnswerInputOne);
     $('.playerFinalWagerTwo').append(finalAnswerInputTwo);
     $('.playerFinalWagerThree').append(finalAnswerInputThree);
+    $('.finalWagerButton').hide();
+    $('.finalAnswerButton').show();
+  },
+
+  saveFinalAnswer(game) {
+    game.finalJeopardy.collectAnswers(
+      $('.finalAnswerInputOne').val(), 
+      $('.finalAnswerInputTwo').val(), 
+      $('.finalAnswerInputThree').val()
+    )
   },
 
   getPlayerWager(currentPlayer) {
@@ -113,6 +123,11 @@ let DOMupdates = {
 
   hideDailyDouble() {
     $('.wager').hide();
+  },
+
+  hideButtons() {
+    $('.finalWagerButton').hide();
+    $('.finalAnswerButton').hide();
   },
 
   changeCategory(category) {
